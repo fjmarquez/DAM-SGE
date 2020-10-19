@@ -27,13 +27,16 @@ namespace _05HolaMundoASPNET
         /// <param name="e"></param>
         protected void btnSaludar_Click(object sender, EventArgs e)
         {
+            //Vacia los labels
             lblE.Text = "";
             lblN.Text = "";
 
-
+            //Obtenemos el texto que contiene el TextBox asignado para recoger el nombre
             String txtN = tbN.Text;
+            //Numero de caracteres introducidos en el Textbox asignado para recoger el nombre
             int lenghtTxt = txtN.Length;
 
+            //Comprueba si el TextBox asginado para recoger el nombre esta vacio o no
             if (lenghtTxt == 0)
             {
                 lblE.Text = "Debes introducir un nombre";
