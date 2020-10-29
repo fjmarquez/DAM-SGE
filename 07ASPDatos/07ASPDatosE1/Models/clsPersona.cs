@@ -14,5 +14,20 @@ namespace _07ASPDatosE1.Models
         public string direccion { get; set; }
         public string telefono { get; set; }
 
+        public clsPersona(int ID, string nombre, string apellidos, string direccion, string telefono)
+        {
+            this.IDPersona = ID;
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.direccion = direccion;
+            this.telefono = telefono;
+        }
+
+        public clsPersona()
+        {
+        }
+
+
+
     }
 }

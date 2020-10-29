@@ -44,9 +44,10 @@ namespace _07ASPDatosE1.Controllers
         public ActionResult listadoPersonas()
         {
             List<clsPersona> listaPersonas = new List<clsPersona>();
+            clsListaPersonas rellena = new clsListaPersonas();
+            listaPersonas = rellena.listaPersonas();
 
-
-            return View();
+            return View(listaPersonas);
         }
     }
 }
