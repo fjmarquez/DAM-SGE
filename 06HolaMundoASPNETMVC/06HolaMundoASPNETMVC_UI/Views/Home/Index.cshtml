@@ -14,6 +14,42 @@
     <div>
         <h1>Hola mundo desde el controlador </h1>
         @Html.ActionLink("Listado de productos", "ListadoProductos", "Productos")
+        <br />
+
+
+
+        @{
+            DateTime medioDia = DateTime.Parse("12:00");
+            String horaActual = DateTime.Now.ToString("H:mm");
+
+            
+
+        }
+
+        <p>Hola son las: @horaActual </p>
+
+        @if (DateTime.Parse(horaActual) > medioDia)
+        {
+            <p>Hemos pasado el medio dia</p>
+        }
+        else
+        {
+            <p>No hemos pasado el medio dia</p>
+        }
+
+    <table border="1">
+        @for (int fila = 1; fila <= 12; fila++)
+        {
+            <tr>
+                @for (int columna = 1; columna <= 10; columna++)
+                {
+                    <td>@fila * @columna = @(fila * columna)</td>
+                }
+            </tr>
+        }
+    </table>
+
+
     </div>
 </body>
 </html>
