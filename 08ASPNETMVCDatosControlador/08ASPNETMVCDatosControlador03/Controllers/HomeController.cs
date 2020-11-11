@@ -10,18 +10,29 @@ namespace _08ASPNETMVCDatosControlador03.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+        
         public ActionResult Index()
         {
-            DateTime d = new DateTime().Date;
+            DateTime d = DateTime.Now;
 
-            clsPersona persona1 = new clsPersona(2, "José", "Márquez", d, "Villarrasa 1", "555555555");
+            clsPersona persona1 = new clsPersona(2, "Francisco José", "Márquez", d, "Villarrasa 1", "555555555");
             
             return View(persona1);
         }
 
-        public ActionResult Editar()
-        {
-            return View();
+        [HttpPost]
+        public ActionResult Index(clsPersona persona) {
+            if (!ModelState.IsValid)
+            {
+                return View(persona);
+            }
+            else
+            {
+                return View("Editar", persona);
+            }
+            
         }
+
+
     }
 }

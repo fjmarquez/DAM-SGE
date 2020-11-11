@@ -1,12 +1,67 @@
-﻿@Model.08ASPNETMVCDatosControlador03.Models.clsPersona
+﻿@model _08ASPNETMVCDatosControlador03.Models.clsPersona
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index @Model.nombre</h2>
+<h2></h2>
+<!--
+<form method="post" action="/Home/Index">
+    <input type="text" name="idPersona" value="@Model.idPersona" />
+    <input type="text" name="nombre" value="@Model.nombre" />
+    <input type="text" name="apellidos" value="@Model.apellidos" />
+    <input type="text" name="fechaNacimiento" value="@Model.fechaNacimiento" />
+    <input type="text" name="direccion" value="@Model.direccion" />
+    <input type="text" name="telefono" value="@Model.telefono" />
+    <select name="dpto">
+        <option selected></option>
+    </select>
+    <input type="submit" name="btnSubmit" />
+</form>-->
 
-<form>
-    <input type="text" name="idPersona" value="" />
+<form method="post" action="/Home/Index">
+    <label>ID:</label>
+    <p>
+        @Html.HiddenFor(model => model.idPersona)
+    </p>
+    
+    <label>Nombre:</label>
+    <p>
+        @Html.TextBoxFor(model => model.nombre)
+        <label>
+            @Html.ValidationMessageFor(model => model.nombre)
+        </label>
+    </p>
+    <label>Apellidos:</label>
+    <p>
+        @Html.TextBoxFor(model => model.apellidos)
+        <label>
+            @Html.ValidationMessageFor(model => model.apellidos)
+        </label>
+    </p>
+    <label>Fecha de Nacimiento:</label>
+    <p>
+        @Html.TextBoxFor(model => model.fechaNacimiento)
+        <label>
+            @Html.ValidationMessageFor(model => model.fechaNacimiento)
+        </label>
+    </p>
+    <label>Direccion:</label>
+    <p>
+        @Html.TextBoxFor(model => model.direccion)
+        <label>
+            @Html.ValidationMessageFor(model => model.direccion)
+        </label>
+    </p>
+    <label>Telefono:</label>
+    <p>
+        @Html.TextBoxFor(model => model.telefono)
+        <label>
+            @Html.ValidationMessageFor(model => model.telefono)
+        </label>
+    </p>
+
+    <input type="submit" name="btnSubmit" />
 </form>
+
 
