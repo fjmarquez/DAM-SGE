@@ -24,11 +24,13 @@ namespace _10ADONet01.Controllers
             {
                 sqlc.ConnectionString = "server=fjmarquez.database.windows.net;database=fjmarquez;uid=fjmarquez;pwd=Mitesoro1.";
                 sqlc.Open();
-                ViewBag.ConexionBD = "Conexion abierta correctamente";
+                //ViewBag.ConexionBD = "Conexion abierta correctamente";
+                ViewBag.StateBD = sqlc.State;
             }
             catch(SqlException e)
             {
-                ViewBag.ConexionBD = "Error";
+                //ViewBag.ConexionBD = "Error al intentar conectar con la base de datos.";
+                ViewBag.StateBD = e;
             }
 
             return View("Index");

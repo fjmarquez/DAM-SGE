@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10ADONet01", "10ADONet01\10ADONet01.csproj", "{598E668D-DC1C-44D8-9F17-EE3CBAC8CBC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10ADONet02", "10ADONet02\10ADONet02.csproj", "{53F84FA2-5077-445D-95ED-72629A82DE91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{598E668D-DC1C-44D8-9F17-EE3CBAC8CBC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{598E668D-DC1C-44D8-9F17-EE3CBAC8CBC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{598E668D-DC1C-44D8-9F17-EE3CBAC8CBC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F84FA2-5077-445D-95ED-72629A82DE91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F84FA2-5077-445D-95ED-72629A82DE91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F84FA2-5077-445D-95ED-72629A82DE91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F84FA2-5077-445D-95ED-72629A82DE91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
