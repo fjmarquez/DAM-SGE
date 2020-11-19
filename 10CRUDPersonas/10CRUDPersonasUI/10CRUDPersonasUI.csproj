@@ -113,6 +113,16 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\10CRUDPersonasBL\10CRUDPersonasBL.csproj">
+      <Project>{5dfddc4a-c63d-4b9f-b586-35e30ff9fcd9}</Project>
+      <Name>10CRUDPersonasBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\10CRUDPersonasEntities\10CRUDPersonasEntities.csproj">
+      <Project>{d56d9458-0a6d-4244-979b-0166ee23a8f3}</Project>
+      <Name>10CRUDPersonasEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
