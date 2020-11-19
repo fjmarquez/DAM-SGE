@@ -29,7 +29,7 @@ namespace _10ADONet02.Controllers
                 
                 SqlConnection sqlc = con.getConnection();
                 //con.closeConnection(ref sqlc);
-                consulta.CommandText = "SELECT ID, Nombre, Apellidos, FechaNacimiento, Direccion, Telefono, IDDepartamento FROM Personas";
+                consulta.CommandText = "SELECT ID, Nombre, Apellidos, FechaNacimiento, Direccion, Telefono, IDDepartamento, Foto FROM Personas";
                 /*consulta.CommandText =
                     "select p.ID, p.Nombre, p.Apellidos, p.FechaNacimiento, p.Direccion, " +
                     "p.Telefono, p.IDDepartamento, d.Nombre from Personas as p inner join " +
@@ -45,14 +45,34 @@ namespace _10ADONet02.Controllers
                         persona = new clsPersona();
                         persona.Id = (int)lector["ID"];
                         persona.Nombre = (string)lector["Nombre"];
-                        persona.Apellidos = (string)lector["Apellidos"];
-                        persona.FechaNacimiento = (DateTime)lector["FechaNacimiento"];
-                        //persona.Foto = (byte[])lector["Foto"];
-                        persona.Direccion = (string)lector["Direccion"];
-                        persona.Telefono = (string)lector["Telefono"];
-                        persona.Departamento = new clsDepartamento();
-                        persona.Departamento.Id = (int)lector["IDDepartamento"];
-                        //persona.Departamento.Departamento = (string)lector["d.Nombre"];
+                        if(lector["Apellidos"] != System.DBNull.Value)
+                        {
+                            persona.Apellidos = (string)lector["Apellidos"];
+                        }
+                        if (lector["FechaNacimiento"] != System.DBNull.Value)
+                        {
+                            persona.FechaNacimiento = (DateTime)lector["FechaNacimiento"];
+                        }
+                        if (lector["Foto"] != System.DBNull.Value)
+                        {
+                            persona.Foto = (byte[])lector["Foto"];
+                        }
+                        if (lector["Direccion"] != System.DBNull.Value)
+                        {
+                            persona.Direccion = (string)lector["Direccion"];
+                        }
+                        if (lector["Telefono"] != System.DBNull.Value)
+                        {
+                            persona.Telefono = (string)lector["Telefono"];
+                        }
+                        if (lector["IDDepartamento"] != System.DBNull.Value)
+                        {
+                            persona.Departamento = new clsDepartamento();
+                            persona.Departamento.Id = (int)lector["IDDepartamento"];
+                            //persona.Departamento.Departamento = (string)lector["d.Nombre"];
+                        }
+
+
                         listadoPersonas.Add(persona);
                     }
                 }
