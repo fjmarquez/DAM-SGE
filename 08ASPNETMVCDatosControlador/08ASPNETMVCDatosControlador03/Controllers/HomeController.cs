@@ -22,7 +22,7 @@ namespace _08ASPNETMVCDatosControlador03.Controllers
 
         [HttpPost]
         public ActionResult Index(clsPersona persona) {
-<<<<<<< Updated upstream
+
             if (!ModelState.IsValid)
             {
                 return View(persona);
@@ -31,10 +31,6 @@ namespace _08ASPNETMVCDatosControlador03.Controllers
             {
                 return View("Editar", persona);
             }
-            
-=======
-            return View("Editar", persona);
->>>>>>> Stashed changes
         }
 
 

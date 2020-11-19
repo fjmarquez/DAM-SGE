@@ -1,0 +1,2 @@
+D:\GitHub\SGE\DAM-SGE\08ASPNETMVCDatosControlador\08ASPNETMVCDatosControlador02\obj\Debug\08ASPNETMVCDatosControlador02.csprojAssemblyReference.cache
+D:\GitHub\SGE\DAM-SGE\08ASPNETMVCDatosControlador\08ASPNETMVCDatosControlador02\obj\Debug\08ASPNETMVCDatosControlador02.csproj.CoreCompileInputs.cache
