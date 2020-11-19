@@ -11,6 +11,7 @@ namespace _08ASPNETMVCDatosControlador03.Models
     [Bind(Include= "idPersona, nombre, apellidos, fechaNacimiento, direccion, telefono")]
     public class clsPersona
     {
+<<<<<<< Updated upstream
 
         [HiddenInput(DisplayValue = false)]
         [Display(Name ="ID")]
@@ -46,6 +47,15 @@ namespace _08ASPNETMVCDatosControlador03.Models
         public String telefono { get; set; }
         
 
+=======
+         public int idPersona { get; set; }
+         public String nombre { get; set; }
+         public String apellidos { get; set; }
+         public DateTime fechaNacimiento { get; set; }
+         public String direccion { get; set; }
+         public String telefono { get; set; }
+        
+>>>>>>> Stashed changes
         public clsPersona()
         {
             this.idPersona = 0;

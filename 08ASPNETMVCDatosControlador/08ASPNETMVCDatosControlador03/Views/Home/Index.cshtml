@@ -1,10 +1,15 @@
+<<<<<<< Updated upstream
 ﻿@model _08ASPNETMVCDatosControlador03.Models.clsPersona
+=======
+﻿@Model clsPersona.Models.persona1
+>>>>>>> Stashed changes
 
 @{
     ViewBag.Title = "Index";
 }
 
 <h2></h2>
+<<<<<<< Updated upstream
 <!--
 <form method="post" action="/Home/Index">
     <input type="text" name="idPersona" value="@Model.idPersona" />
@@ -61,6 +66,16 @@
         </label>
     </p>
 
+=======
+
+<form method="post" action="/Home/Index">
+    <input type="text" name="idPersona" value="@Model.idPersona" />
+    <input type="text" name="nombre" value="@Model.nombre" />
+    <input type="text" name="apellidos" value="@Model.apellidos" />
+    <input type="text" name="fechaNacimiento" value="@Model.fechaNacimiento" />
+    <input type="text" name="direccion" value="@Model.direccion" />
+    <input type="text" name="telefono" value="@Model.telefono" />
+>>>>>>> Stashed changes
     <input type="submit" name="btnSubmit" />
 </form>
 
