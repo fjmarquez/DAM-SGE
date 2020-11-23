@@ -9,3 +9,14 @@ C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\obj\De
 C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Debug\10CRUDPersonasBL.csproj.CopyComplete
 C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Debug\10CRUDPersonasBL.dll
 C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Debug\10CRUDPersonasBL.pdb
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Debug\10CRUDPersonasBL.dll
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Debug\10CRUDPersonasBL.pdb
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Debug\10CRUDPersonasDAL.dll
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Debug\10CRUDPersonasEntities.dll
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Debug\10CRUDPersonasDAL.pdb
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Debug\10CRUDPersonasEntities.pdb
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Debug\10CRUDPersonasBL.csprojAssemblyReference.cache
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Debug\10CRUDPersonasBL.csproj.CoreCompileInputs.cache
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Debug\10CRUDPersonasBL.csproj.CopyComplete
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Debug\10CRUDPersonasBL.dll
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Debug\10CRUDPersonasBL.pdb

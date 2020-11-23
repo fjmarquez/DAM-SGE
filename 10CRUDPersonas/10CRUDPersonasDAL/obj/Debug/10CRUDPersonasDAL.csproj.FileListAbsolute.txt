@@ -7,3 +7,12 @@ C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasDAL\obj\D
 C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasDAL\obj\Debug\10CRUDPersonasDAL.csproj.CopyComplete
 C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasDAL\obj\Debug\10CRUDPersonasDAL.dll
 C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasDAL\obj\Debug\10CRUDPersonasDAL.pdb
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasDAL\bin\Debug\10CRUDPersonasDAL.dll
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasDAL\bin\Debug\10CRUDPersonasDAL.pdb
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasDAL\bin\Debug\10CRUDPersonasEntities.dll
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasDAL\bin\Debug\10CRUDPersonasEntities.pdb
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasDAL\obj\Debug\10CRUDPersonasDAL.csprojAssemblyReference.cache
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasDAL\obj\Debug\10CRUDPersonasDAL.csproj.CoreCompileInputs.cache
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasDAL\obj\Debug\10CRUDPersonasDAL.csproj.CopyComplete
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasDAL\obj\Debug\10CRUDPersonasDAL.dll
+D:\GitHub\SGE\DAM-SGE\10CRUDPersonas\10CRUDPersonasDAL\obj\Debug\10CRUDPersonasDAL.pdb

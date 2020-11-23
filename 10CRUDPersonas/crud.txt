@@ -1,0 +1,73 @@
+Entities:
+	-clsPersona
+	-clsDepartamento
+
+DAL:
+	-Connection:
+		-clsConnectionDAL
+			-getConnection: Devuelve una conexion abierta
+			-closeConnection: Recibe una conexion y la cierra
+	-HandlerDAL:
+		-clsHandlerPersonaDAL:
+			-deletePersonaDAL(ID) return filasAfectaddas(int)
+			-updatePersonaDAL(clsPersona) return filasAfectaddas(int)
+			-createPersonaDAL(clsPersona) return filasAfectaddas(int)
+	-ListadosDAL:
+		-clsListadoPersonasDAL:
+			-getListadoPersonas return list<clsPersona>
+			-getPersonaPorID(ID) return clsPersona
+		-clsListadoDepartamentosDAL:
+			-getListadoDepartamentos return list <clsDepartamento>
+			-getDepartamentoPorID(ID) return clsDepartamento
+
+BL:
+
+	-HandlersBL:
+		-clsHandlerPersonaBL:
+			-deletePersona(ID)
+			-updatePersona(clsPersona)
+			-createPersona(clsPersona)
+	-ListadosBL:
+		-clsListadoPersonasBL:
+			-getListadoPersonas
+			-getPersonaPorID(ID)
+		-clsListadoDepartamentosBL:
+			-getListadoDepartamentos
+			-getDepartamentoPorID(ID)
+
+UI:
+	-Views:
+		-listado
+		-edit
+		-delete
+		-create
+		-details
+	-Model:
+		-clsPersonaConNombreDepartamento
+		-clsListadoPersonasConNombreDepartamento:
+			-getListadoPersonasConNombreDepartamento
+		-clsPersonaConListadoDepartamentos
+	-Controllers:
+		-personasController:
+			-listado:
+				-Devuelve la vista listado que recibe como modelo List<clsPersonaConNombreDepartamento>.
+			-Edit:
+				-Devuelve una vista con un formulario previamente rellenado con los datos de la persona correspondiente
+				 para editar una persona que recibe como modelo un clsPersonaConListadoDepartamentos.
+			-Delete:
+				-Devuelve una vista para eliminar una persona que recibe un clsPersona.
+			-Create:
+				-Devuelve una vista con un formulario con un listado de departamentos cargado previamente
+				 para crear una nueva y envia a BL un clsPersona.
+			-Details:
+				-Devuelve una vista donde visualizaremos todos los datos relacionados a una persona
+				 recibe una clsPersonaConNombreDepartamento.
+
+
+
+
+
+
+
+
+
