@@ -1,0 +1,5 @@
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasEntities\bin\Debug\10CRUDPersonasEntities.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasEntities\bin\Debug\10CRUDPersonasEntities.pdb
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasEntities\obj\Debug\10CRUDPersonasEntities.csproj.CoreCompileInputs.cache
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasEntities\obj\Debug\10CRUDPersonasEntities.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasEntities\obj\Debug\10CRUDPersonasEntities.pdb

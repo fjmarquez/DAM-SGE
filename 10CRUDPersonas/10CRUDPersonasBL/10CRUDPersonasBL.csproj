@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5DFDDC4A-C63D-4B9F-B586-35E30FF9FCD9}</ProjectGuid>
+    <ProjectGuid>{9D2DD970-DA6F-4910-AF76-1FFE75A458D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>_10CRUDPersonasBL</RootNamespace>
@@ -42,19 +42,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Listados\listadoDepartamentosBL.cs" />
+    <Compile Include="Listados\listadoPersonasBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Handlers\" />
-    <Folder Include="Listados\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\10CRUDPersonasDAL\10CRUDPersonasDAL.csproj">
-      <Project>{d5b5402a-583e-4f78-830d-aafa15fa6f94}</Project>
+      <Project>{0120e52a-5d46-4af2-9f20-b21592a53d7c}</Project>
       <Name>10CRUDPersonasDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\10CRUDPersonasEntities\10CRUDPersonasEntities.csproj">
-      <Project>{d56d9458-0a6d-4244-979b-0166ee23a8f3}</Project>
+      <Project>{89a33200-199e-4ce2-9f61-9452a233a93e}</Project>
       <Name>10CRUDPersonasEntities</Name>
     </ProjectReference>
   </ItemGroup>

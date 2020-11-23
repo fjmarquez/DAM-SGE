@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D5B5402A-583E-4F78-830D-AAFA15FA6F94}</ProjectGuid>
+    <ProjectGuid>{0120E52A-5D46-4AF2-9F20-B21592A53D7C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>_10CRUDPersonasDAL</RootNamespace>
@@ -42,16 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Connection\clsMyConnectionDAL.cs" />
+    <Compile Include="Listados\listadoDepartamentosDAL.cs" />
+    <Compile Include="Listados\listadoPersonasDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Conexion\" />
     <Folder Include="Handlers\" />
-    <Folder Include="Listados\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\10CRUDPersonasEntities\10CRUDPersonasEntities.csproj">
-      <Project>{d56d9458-0a6d-4244-979b-0166ee23a8f3}</Project>
+      <Project>{89a33200-199e-4ce2-9f61-9452a233a93e}</Project>
       <Name>10CRUDPersonasEntities</Name>
     </ProjectReference>
   </ItemGroup>
