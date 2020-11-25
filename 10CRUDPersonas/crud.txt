@@ -4,57 +4,57 @@ Entities:
 
 DAL:
 	-Connection:
-		-clsConnectionDAL
+		-clsConnectionDAL	--OK
 			-getConnection: Devuelve una conexion abierta
 			-closeConnection: Recibe una conexion y la cierra
 	-HandlerDAL:
 		-clsHandlerPersonaDAL:
-			-deletePersonaDAL(ID) return filasAfectaddas(int)
+			-deletePersonaDAL(ID) return filasAfectaddas(int)	--OK
 			-updatePersonaDAL(clsPersona) return filasAfectaddas(int)
 			-createPersonaDAL(clsPersona) return filasAfectaddas(int)
 	-ListadosDAL:
-		-clsListadoPersonasDAL:
-			-getListadoPersonas return list<clsPersona>
-			-getPersonaPorID(ID) return clsPersona
+		-clsListadoPersonasDAL:	
+			-getListadoPersonas return list<clsPersona>	--OK
+			-getPersonaPorID(ID) return clsPersona	--OK
 		-clsListadoDepartamentosDAL:
-			-getListadoDepartamentos return list <clsDepartamento>
-			-getDepartamentoPorID(ID) return clsDepartamento
+			-getListadoDepartamentos return list <clsDepartamento>	--OK
+			-getDepartamentoPorID(ID) return clsDepartamento	--OK	
 
 BL:
 
 	-HandlersBL:
 		-clsHandlerPersonaBL:
-			-deletePersona(ID)
+			-deletePersona(ID)	--OK
 			-updatePersona(clsPersona)
 			-createPersona(clsPersona)
 	-ListadosBL:
 		-clsListadoPersonasBL:
-			-getListadoPersonas
-			-getPersonaPorID(ID)
+			-getListadoPersonas	--OK
+			-getPersonaPorID(ID)	--OK
 		-clsListadoDepartamentosBL:
-			-getListadoDepartamentos
-			-getDepartamentoPorID(ID)
+			-getListadoDepartamentos	--OK
+			-getDepartamentoPorID(ID)	--OK
 
 UI:
 	-Views:
-		-listado
+		-listado	--OK
 		-edit
-		-delete
+		-delete		--OK
 		-create
 		-details
 	-Model:
-		-clsPersonaConNombreDepartamento
+		-clsPersonaConNombreDepartamento	--OK
 		-clsListadoPersonasConNombreDepartamento:
 			-getListadoPersonasConNombreDepartamento
 		-clsPersonaConListadoDepartamentos
 	-Controllers:
 		-personasController:
-			-listado:
+			-listado:	--OK
 				-Devuelve la vista listado que recibe como modelo List<clsPersonaConNombreDepartamento>.
 			-Edit:
 				-Devuelve una vista con un formulario previamente rellenado con los datos de la persona correspondiente
 				 para editar una persona que recibe como modelo un clsPersonaConListadoDepartamentos.
-			-Delete:
+			-Delete:	--OK
 				-Devuelve una vista para eliminar una persona que recibe un clsPersona.
 			-Create:
 				-Devuelve una vista con un formulario con un listado de departamentos cargado previamente

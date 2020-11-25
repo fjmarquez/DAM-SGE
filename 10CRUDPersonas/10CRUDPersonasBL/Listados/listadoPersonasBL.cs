@@ -18,5 +18,12 @@ namespace _10CRUDPersonasBL.Listados
             return list;
         }
 
+        public clsPersona getPersonaPorID(int ID)
+        {
+            clsPersona persona = new listadoPersonasDAL().getPersonaPorID(ID);
+
+            return persona;
+        }
+
     }
 }

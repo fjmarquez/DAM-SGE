@@ -43,13 +43,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Connection\clsMyConnectionDAL.cs" />
+    <Compile Include="Handlers\clsHandlerPersonaDAL.cs" />
     <Compile Include="Listados\listadoDepartamentosDAL.cs" />
     <Compile Include="Listados\listadoPersonasDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Handlers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\10CRUDPersonasEntities\10CRUDPersonasEntities.csproj">
       <Project>{89a33200-199e-4ce2-9f61-9452a233a93e}</Project>
