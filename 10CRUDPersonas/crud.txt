@@ -10,7 +10,7 @@ DAL:
 	-HandlerDAL:
 		-clsHandlerPersonaDAL:
 			-deletePersonaDAL(ID) return filasAfectaddas(int)	--OK
-			-updatePersonaDAL(clsPersona) return filasAfectaddas(int)
+			-updatePersonaDAL(clsPersona) return filasAfectaddas(int)	--OK
 			-createPersonaDAL(clsPersona) return filasAfectaddas(int)
 	-ListadosDAL:
 		-clsListadoPersonasDAL:	
@@ -25,7 +25,7 @@ BL:
 	-HandlersBL:
 		-clsHandlerPersonaBL:
 			-deletePersona(ID)	--OK
-			-updatePersona(clsPersona)
+			-updatePersona(clsPersona)	--OK
 			-createPersona(clsPersona)
 	-ListadosBL:
 		-clsListadoPersonasBL:
@@ -38,20 +38,20 @@ BL:
 UI:
 	-Views:
 		-listado	--OK
-		-edit
+		-edit		--OK
 		-delete		--OK
 		-create
 		-details
 	-Model:
 		-clsPersonaConNombreDepartamento	--OK
-		-clsListadoPersonasConNombreDepartamento:
+		-clsListadoPersonasConNombreDepartamento:	--URGENTE!
 			-getListadoPersonasConNombreDepartamento
-		-clsPersonaConListadoDepartamentos
+		-clsPersonaConListadoDepartamentos	--OK
 	-Controllers:
 		-personasController:
 			-listado:	--OK
 				-Devuelve la vista listado que recibe como modelo List<clsPersonaConNombreDepartamento>.
-			-Edit:
+			-Edit:		--OK
 				-Devuelve una vista con un formulario previamente rellenado con los datos de la persona correspondiente
 				 para editar una persona que recibe como modelo un clsPersonaConListadoDepartamentos.
 			-Delete:	--OK
