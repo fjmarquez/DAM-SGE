@@ -1,4 +1,5 @@
 ﻿using _10CRUDPersonasDAL.Connection;
+using _10CRUDPersonasEntities;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,8 +11,13 @@ namespace _10CRUDPersonasDAL.Handlers
 {
     public class clsHandlerPersonaDAL
     {
-
-        public int deletePersonaDAL (int ID)
+        /// <summary>
+        /// Funcion de la capa DAL, la cual accede directamente a la informacion de la BD Azure y eliminar la persona correspondiente 
+        /// con el id recibido por paramentros
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public int deletePersonaDAL(int ID)
         {
             clsMyConnectionDAL con = new clsMyConnectionDAL();
             SqlCommand query = new SqlCommand();
@@ -24,7 +30,7 @@ namespace _10CRUDPersonasDAL.Handlers
                 query.Connection = sqlc;
                 reader = query.ExecuteReader();
 
-                
+
                 reader.Close();
                 con.closeConnection(ref sqlc);
             }
@@ -35,6 +41,50 @@ namespace _10CRUDPersonasDAL.Handlers
 
 
             return reader.RecordsAffected;
+
+        }
+
+        /// <summary>
+        /// Funcion de la capa DAL, la cual accede directamente a la informacion de la BD Azure y actualiza el registro de la persona 
+        /// recibida por parametros
+        /// </summary>
+        /// <param name="persona"></param>
+        /// <returns></returns>
+        public int updatePersonaDAL(clsPersona persona)
+        {
+
+            clsMyConnectionDAL con = new clsMyConnectionDAL();
+            SqlCommand query = new SqlCommand();
+            SqlDataReader reader;
+
+            try
+            {
+                SqlConnection sqlc = con.getConnection();
+                query.CommandText = "UPDATE Personas SET Nombre=@nombre, Apellidos=@apellidos, Direccion=@direccion, FechaNacimiento=@fechanacimiento, Telefono=@tlf, IDDepartamento=@iddepartamento WHERE ID=@id";
+
+                query.Parameters.AddWithValue("id", persona.Id);
+                query.Parameters.AddWithValue("nombre", persona.Nombre);
+                query.Parameters.AddWithValue("apellidos", persona.Apellidos);
+                query.Parameters.AddWithValue("direccion", persona.Direccion);
+                query.Parameters.AddWithValue("fechanacimiento", persona.FechaNacimiento);
+                query.Parameters.AddWithValue("tlf", persona.Telefono);
+                query.Parameters.AddWithValue("iddepartamento", persona.IdDepartamento);
+
+                query.Connection = sqlc;
+                reader = query.ExecuteReader();
+
+
+                reader.Close();
+                con.closeConnection(ref sqlc);
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+
+
+            return reader.RecordsAffected;
+
         }
 
     }

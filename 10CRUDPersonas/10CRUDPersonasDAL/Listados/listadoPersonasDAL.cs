@@ -12,6 +12,11 @@ namespace _10CRUDPersonasDAL.Listados
     public class listadoPersonasDAL
     {
 
+        /// <summary>
+        ///  Funcion de la capa DAL, la cual accede directamente a la informacion de la BD Azure y obtiene un listado con la informacion de 
+        ///  todas las personas de la BD
+        /// </summary>
+        /// <returns></returns>
         public List<clsPersona> getListadoPersonas()
         {
             clsMyConnectionDAL con = new clsMyConnectionDAL();
@@ -76,7 +81,12 @@ namespace _10CRUDPersonasDAL.Listados
             return list;
         }
 
-
+        /// <summary>
+        ///  Funcion de la capa DAL, la cual accede directamente a la informacion de la BD Azure y obtiene toda la informacion relacionada
+        ///  con la persona cuyo id coincida con el recibido por parametros
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public clsPersona getPersonaPorID(int ID)
         {
             clsMyConnectionDAL con = new clsMyConnectionDAL();

@@ -1,100 +1,15 @@
-﻿using System;
+﻿using _10CRUDPersonasEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace _10CRUDPersonasUI.Models
 {
-    public class clsPersonaConNombreDepartamento
+    public class clsPersonaConNombreDepartamento : clsPersona
     {
-        private int id;
-        private byte[] foto;
-        private String nombre, apellidos, direccion, telefono;
-        private DateTime fechaNacimiento;
+
         private String nombreDepartamento;
-        private int idDepartamento;
-
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                id = value;
-            }
-        }
-
-        public byte[] Foto
-        {
-            get
-            {
-                return foto;
-            }
-            set
-            {
-                foto = value;
-            }
-        }
-
-        public string Nombre
-        {
-            get
-            {
-                return nombre;
-            }
-            set
-            {
-                nombre = value;
-            }
-        }
-        public string Apellidos
-        {
-            get
-            {
-                return apellidos;
-            }
-            set
-            {
-                apellidos = value;
-            }
-        }
-        public DateTime FechaNacimiento
-        {
-            get
-            {
-                return fechaNacimiento;
-            }
-            set
-            {
-                fechaNacimiento = value;
-            }
-        }
-
-        public string Direccion
-        {
-            get
-            {
-                return direccion;
-            }
-            set
-            {
-                direccion = value;
-            }
-        }
-
-        public string Telefono
-        {
-            get
-            {
-                return telefono;
-            }
-            set
-            {
-                telefono = value;
-            }
-        }
 
         public String NombreDepartamento
         {
@@ -108,17 +23,6 @@ namespace _10CRUDPersonasUI.Models
             }
         }
 
-        public int IdDepartamento
-        {
-            get
-            {
-                return idDepartamento;
-            }
-            set
-            {
-                idDepartamento = value;
-            }
-        }
 
         public clsPersonaConNombreDepartamento(String nombre, String apellidos, DateTime fechaNacimiento, string direccion, string telefono, string nombreDepartamento, int idDepartamento)
         {

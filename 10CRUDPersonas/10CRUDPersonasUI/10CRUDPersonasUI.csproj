@@ -112,6 +112,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\clsPersonaConListadoDepartamentos.cs" />
     <Compile Include="Models\clsPersonaConNombreDepartamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -133,8 +134,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\personas\_listado.cshtml" />
     <Content Include="Views\personas\delete.cshtml" />
-    <Content Include="Views\personas\View.cshtml" />
     <Content Include="Views\personas\listado.cshtml" />
+    <Content Include="Views\personas\edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

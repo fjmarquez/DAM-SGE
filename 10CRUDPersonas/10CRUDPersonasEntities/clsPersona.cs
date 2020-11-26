@@ -110,9 +110,9 @@ namespace _10CRUDPersonasEntities
             }
         }
 
-        public clsPersona(String nombre, String apellidos, DateTime fechaNacimiento, string direccion, string telefono, int idDepartamento)
+        public clsPersona(int id, String nombre, String apellidos, DateTime fechaNacimiento, string direccion, string telefono, int idDepartamento)
         {
-
+            this.Id = id;
             this.Nombre = nombre;
             this.Apellidos = apellidos;
             this.FechaNacimiento = fechaNacimiento;
@@ -123,7 +123,7 @@ namespace _10CRUDPersonasEntities
 
         public clsPersona()
         {
-
+            this.Id = 0;
             this.Nombre = "";
             this.Apellidos = "";
             this.FechaNacimiento = DateTime.Now;

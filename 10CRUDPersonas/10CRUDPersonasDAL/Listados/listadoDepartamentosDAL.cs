@@ -11,6 +11,11 @@ namespace _10CRUDPersonasDAL.Listados
 {
     public class listadoDepartamentosDAL
     {
+
+        /// <summary>
+        ///  Funcion de la capa DAL, la cual accede directamente a la informacion de la BD Azure y obtiene un listado de departamentos 
+        /// </summary>
+        /// <returns></returns>
         public List<clsDepartamento> getListadoDepartamentos()
         {
             clsMyConnectionDAL con = new clsMyConnectionDAL();
@@ -44,7 +49,6 @@ namespace _10CRUDPersonasDAL.Listados
             catch (SqlException e)
             {
                 throw e;
-                list = null;
             }
 
 
@@ -52,6 +56,12 @@ namespace _10CRUDPersonasDAL.Listados
         }
 
 
+        /// <summary>
+        ///  Funcion de la capa DAL, la cual accede directamente a la informacion de la BD Azure y obtiene toda la informacion sobre
+        ///  el departamento cuyo id recibimos por parametros
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public clsDepartamento getDepartamentoPorID(int ID)
         {
             clsMyConnectionDAL con = new clsMyConnectionDAL();
@@ -81,7 +91,6 @@ namespace _10CRUDPersonasDAL.Listados
             catch (SqlException e)
             {
                 throw e;
-                departamento = null;
             }
 
 
