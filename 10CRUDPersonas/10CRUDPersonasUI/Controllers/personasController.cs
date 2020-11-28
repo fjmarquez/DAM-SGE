@@ -32,26 +32,8 @@ namespace _10CRUDPersonasUI.Controllers
 
             List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
 
-            List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new List<clsPersonaConNombreDepartamento>();
-
-            foreach (clsPersona p in list)
-            {
-                clsPersonaConNombreDepartamento pConNombreDepartamento = new clsPersonaConNombreDepartamento();
-
-                pConNombreDepartamento.Id = p.Id;
-                pConNombreDepartamento.Nombre = p.Nombre;
-                pConNombreDepartamento.Apellidos = p.Apellidos;
-                pConNombreDepartamento.Direccion = p.Direccion;
-                pConNombreDepartamento.Telefono = p.Telefono;
-                pConNombreDepartamento.Foto = p.Foto;
-                pConNombreDepartamento.IdDepartamento = p.IdDepartamento;
-                clsDepartamento departamento = new listadoDepartamentosBL().getDepartamentoPorID(p.IdDepartamento);
-                pConNombreDepartamento.NombreDepartamento = departamento.Departamento;
-
-                listConNombreDepartamento.Add(pConNombreDepartamento);
-
-
-            }
+            List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
+ 
 
                 return View("listado", listConNombreDepartamento);
         }
@@ -83,30 +65,16 @@ namespace _10CRUDPersonasUI.Controllers
 
             List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
 
-            List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new List<clsPersonaConNombreDepartamento>();
+            List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
 
-            foreach (clsPersona p in list)
-            {
-                clsPersonaConNombreDepartamento pConNombreDepartamento = new clsPersonaConNombreDepartamento();
-
-                pConNombreDepartamento.Id = p.Id;
-                pConNombreDepartamento.Nombre = p.Nombre;
-                pConNombreDepartamento.Apellidos = p.Apellidos;
-                pConNombreDepartamento.Direccion = p.Direccion;
-                pConNombreDepartamento.Telefono = p.Telefono;
-                pConNombreDepartamento.Foto = p.Foto;
-                pConNombreDepartamento.IdDepartamento = p.IdDepartamento;
-                clsDepartamento departamento = new listadoDepartamentosBL().getDepartamentoPorID(p.IdDepartamento);
-                pConNombreDepartamento.NombreDepartamento = departamento.Departamento;
-
-                listConNombreDepartamento.Add(pConNombreDepartamento);
-
-
-            }
             return View("listado", listConNombreDepartamento);
         }
 
-
+        /// <summary>
+        /// Muestra la vista edit con la informacion de la persona a editar
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Edit (int id)
         {
 
@@ -118,7 +86,18 @@ namespace _10CRUDPersonasUI.Controllers
             return View("edit", pListDepartamentos);
         }
 
-
+        /// <summary>
+        /// Esta accion se realizara cuando hagamos click sobre el input de la vista edit, creara un nuevo objeto persona con la informacion editada y
+        /// realizara la modificacion en la base de datos a traves de la capa BL. Tras editar mostrara el listado de personas actual.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellidos"></param>
+        /// <param name="fechanacimiento"></param>
+        /// <param name="direccion"></param>
+        /// <param name="telefono"></param>
+        /// <param name="iddepartamento"></param>
+        /// <returns></returns>
         [HttpPost, ActionName("Edit")]
         public ActionResult EditPost(int id, string nombre, string apellidos, DateTime fechanacimiento, string direccion, string telefono, int iddepartamento)
         {
@@ -129,30 +108,48 @@ namespace _10CRUDPersonasUI.Controllers
 
             List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
 
-            List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new List<clsPersonaConNombreDepartamento>();
+            List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
 
-            foreach (clsPersona p in list)
-            {
-                clsPersonaConNombreDepartamento pConNombreDepartamento = new clsPersonaConNombreDepartamento();
-
-                pConNombreDepartamento.Id = p.Id;
-                pConNombreDepartamento.Nombre = p.Nombre;
-                pConNombreDepartamento.Apellidos = p.Apellidos;
-                pConNombreDepartamento.Direccion = p.Direccion;
-                pConNombreDepartamento.Telefono = p.Telefono;
-                pConNombreDepartamento.Foto = p.Foto;
-                pConNombreDepartamento.IdDepartamento = p.IdDepartamento;
-                clsDepartamento departamento = new listadoDepartamentosBL().getDepartamentoPorID(p.IdDepartamento);
-                pConNombreDepartamento.NombreDepartamento = departamento.Departamento;
-
-                listConNombreDepartamento.Add(pConNombreDepartamento);
-
-
-            }
 
             return View("listado", listConNombreDepartamento);
         }
 
+
+        public ActionResult Create()
+        {
+            clsPersona pCreate = new clsPersona();
+            List<clsDepartamento> listDepartamentos = new listadoDepartamentosBL().getListadoDepartamentos();
+
+            clsPersonaConListadoDepartamentos pListDepartamentos = new clsPersonaConListadoDepartamentos(pCreate, listDepartamentos);
+
+            return View("create", pListDepartamentos);
+        }
+
+
+        [HttpPost, ActionName("Create")]
+        public ActionResult CreatePost(string nombre, string apellidos, DateTime fechanacimiento, string direccion, string telefono, int iddepartamento)
+        {
+
+            clsPersona pCreate = new clsPersona(0, nombre, apellidos, fechanacimiento, direccion, telefono, iddepartamento);
+
+            int fieldCount = new clsHandlerPersonaBL().createPersonaBL(pCreate);
+
+            List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
+
+            List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
+
+            return View("listado", listConNombreDepartamento);
+        }
+
+
+        public ActionResult Details(int id)
+        {
+            clsPersona pDetails = new listadoPersonasBL().getPersonaPorID(id);
+
+            clsPersonaConNombreDepartamento pConNombreDepartamento = new clsPersonaConNombreDepartamento().getPersonaConNombreDepartamento(pDetails);
+
+            return View("details", pConNombreDepartamento);
+        }
 
     }
 }

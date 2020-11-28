@@ -44,8 +44,8 @@ namespace _10CRUDPersonasEntities
 
         public clsDepartamento()
         {
-            this.Id = 0;
-            this.Departamento = "";
+            this.Id = -1;
+            this.Departamento = null;
         }
     }
 }

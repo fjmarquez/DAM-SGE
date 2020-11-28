@@ -1,4 +1,5 @@
-﻿using _10CRUDPersonasEntities;
+﻿using _10CRUDPersonasBL.Listados;
+using _10CRUDPersonasEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,24 @@ namespace _10CRUDPersonasUI.Models
             this.Telefono = "";
             this.NombreDepartamento = "";
             this.IdDepartamento = 0;
+        }
+
+        public clsPersonaConNombreDepartamento getPersonaConNombreDepartamento(clsPersona persona)
+        {
+
+            clsPersonaConNombreDepartamento pConNombreDepartamento = new clsPersonaConNombreDepartamento();
+
+            pConNombreDepartamento.Id = persona.Id;
+            pConNombreDepartamento.Nombre = persona.Nombre;
+            pConNombreDepartamento.Apellidos = persona.Apellidos;
+            pConNombreDepartamento.Direccion = persona.Direccion;
+            pConNombreDepartamento.Telefono = persona.Telefono;
+            pConNombreDepartamento.Foto = persona.Foto;
+            pConNombreDepartamento.IdDepartamento = persona.IdDepartamento;
+            clsDepartamento departamento = new listadoDepartamentosBL().getDepartamentoPorID(persona.IdDepartamento);
+            pConNombreDepartamento.NombreDepartamento = departamento.Departamento;
+
+            return pConNombreDepartamento;
         }
 
     }

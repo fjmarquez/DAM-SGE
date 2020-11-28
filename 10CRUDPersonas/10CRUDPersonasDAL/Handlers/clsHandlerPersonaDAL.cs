@@ -87,5 +87,45 @@ namespace _10CRUDPersonasDAL.Handlers
 
         }
 
+        /// <summary>
+        /// Funcion de la capa DAL, la cual accede directamente a la informacion de la BD Azure y inserta un nuevo registro con
+        /// los datos de la persona recibida por parametros
+        /// </summary>
+        /// <param name="persona"></param>
+        /// <returns></returns>
+        public int createPersonaDAL(clsPersona persona)
+        {
+
+            clsMyConnectionDAL con = new clsMyConnectionDAL();
+            SqlCommand query = new SqlCommand();
+            SqlDataReader reader;
+
+            try
+            {
+                SqlConnection sqlc = con.getConnection();
+                query.CommandText = "INSERT INTO Personas (Nombre, Apellidos, Direccion, FechaNacimiento, Telefono, IDDepartamento) " +
+                    "VALUES(@nombre, @apellidos, @direccion, @fechanacimiento, @tlf, @iddepartamento )";
+
+                query.Parameters.AddWithValue("nombre", persona.Nombre);
+                query.Parameters.AddWithValue("apellidos", persona.Apellidos);
+                query.Parameters.AddWithValue("direccion", persona.Direccion);
+                query.Parameters.AddWithValue("fechanacimiento", persona.FechaNacimiento);
+                query.Parameters.AddWithValue("tlf", persona.Telefono);
+                query.Parameters.AddWithValue("iddepartamento", persona.IdDepartamento);
+
+                query.Connection = sqlc;
+                reader = query.ExecuteReader();
+
+                reader.Close();
+                con.closeConnection(ref sqlc);
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+
+            return reader.RecordsAffected;
+        }
+
     }
 }

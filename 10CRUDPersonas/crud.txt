@@ -11,7 +11,7 @@ DAL:
 		-clsHandlerPersonaDAL:
 			-deletePersonaDAL(ID) return filasAfectaddas(int)	--OK
 			-updatePersonaDAL(clsPersona) return filasAfectaddas(int)	--OK
-			-createPersonaDAL(clsPersona) return filasAfectaddas(int)
+			-createPersonaDAL(clsPersona) return filasAfectaddas(int)	--OK
 	-ListadosDAL:
 		-clsListadoPersonasDAL:	
 			-getListadoPersonas return list<clsPersona>	--OK
@@ -26,7 +26,7 @@ BL:
 		-clsHandlerPersonaBL:
 			-deletePersona(ID)	--OK
 			-updatePersona(clsPersona)	--OK
-			-createPersona(clsPersona)
+			-createPersona(clsPersona)	--OK
 	-ListadosBL:
 		-clsListadoPersonasBL:
 			-getListadoPersonas	--OK
@@ -44,7 +44,8 @@ UI:
 		-details
 	-Model:
 		-clsPersonaConNombreDepartamento	--OK
-		-clsListadoPersonasConNombreDepartamento:	--URGENTE!
+			-getPersonaConNombreDepartamento
+		-clsListadoPersonasConNombreDepartamento:	--OK
 			-getListadoPersonasConNombreDepartamento
 		-clsPersonaConListadoDepartamentos	--OK
 	-Controllers:
@@ -56,10 +57,10 @@ UI:
 				 para editar una persona que recibe como modelo un clsPersonaConListadoDepartamentos.
 			-Delete:	--OK
 				-Devuelve una vista para eliminar una persona que recibe un clsPersona.
-			-Create:
+			-Create:	--OK
 				-Devuelve una vista con un formulario con un listado de departamentos cargado previamente
 				 para crear una nueva y envia a BL un clsPersona.
-			-Details:
+			-Details:	--OK
 				-Devuelve una vista donde visualizaremos todos los datos relacionados a una persona
 				 recibe una clsPersonaConNombreDepartamento.
 

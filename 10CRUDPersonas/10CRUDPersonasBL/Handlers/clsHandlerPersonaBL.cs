@@ -36,5 +36,18 @@ namespace _10CRUDPersonasBL.Handlers
             return fieldCount;
         }
 
+        /// <summary>
+        /// Funcion de la capa BL, la cual usa la capa DAL para acceder a la BD azure y insertar los datos de una nueva persona,
+        /// los cuales seran recibidos en un objeto clsPersona recibido por parametros
+        /// </summary>
+        /// <param name="persona"></param>
+        /// <returns></returns>
+        public int createPersonaBL(clsPersona persona)
+        {
+            int fieldCount = new clsHandlerPersonaDAL().createPersonaDAL(persona);
+
+            return fieldCount;
+        }
+
     }
 }

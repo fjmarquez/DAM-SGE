@@ -126,7 +126,7 @@ namespace _10CRUDPersonasEntities
             this.Id = 0;
             this.Nombre = "";
             this.Apellidos = "";
-            this.FechaNacimiento = DateTime.Now;
+            this.FechaNacimiento = DateTime.Today;
             this.Direccion = "";
             this.Telefono = "";
             this.IdDepartamento = 0;
