@@ -64,10 +64,42 @@ namespace _10CRUDPersonasDAL.Handlers
 
                 query.Parameters.AddWithValue("id", persona.Id);
                 query.Parameters.AddWithValue("nombre", persona.Nombre);
-                query.Parameters.AddWithValue("apellidos", persona.Apellidos);
-                query.Parameters.AddWithValue("direccion", persona.Direccion);
-                query.Parameters.AddWithValue("fechanacimiento", persona.FechaNacimiento);
-                query.Parameters.AddWithValue("tlf", persona.Telefono);
+                if (persona.Apellidos == null)
+                {
+                    query.Parameters.AddWithValue("apellidos", DBNull.Value);
+                }
+                else
+                {
+                    query.Parameters.AddWithValue("apellidos", persona.Apellidos);
+                }
+
+                if (persona.Direccion == null)
+                {
+                    query.Parameters.AddWithValue("direccion", DBNull.Value);
+                }
+                else
+                {
+                    query.Parameters.AddWithValue("direccion", persona.Direccion);
+                }
+
+                if (persona.Telefono == null)
+                {
+                    query.Parameters.AddWithValue("tlf", DBNull.Value);
+                }
+                else
+                {
+                    query.Parameters.AddWithValue("tlf", persona.Telefono);
+                }
+
+                if (persona.FechaNacimiento == null)
+                {
+                    query.Parameters.AddWithValue("fechanacimiento", DBNull.Value);
+                }
+                else
+                {
+                    query.Parameters.AddWithValue("fechanacimiento", persona.FechaNacimiento);
+                }
+
                 query.Parameters.AddWithValue("iddepartamento", persona.IdDepartamento);
 
                 query.Connection = sqlc;
@@ -107,10 +139,39 @@ namespace _10CRUDPersonasDAL.Handlers
                     "VALUES(@nombre, @apellidos, @direccion, @fechanacimiento, @tlf, @iddepartamento )";
 
                 query.Parameters.AddWithValue("nombre", persona.Nombre);
-                query.Parameters.AddWithValue("apellidos", persona.Apellidos);
-                query.Parameters.AddWithValue("direccion", persona.Direccion);
-                query.Parameters.AddWithValue("fechanacimiento", persona.FechaNacimiento);
-                query.Parameters.AddWithValue("tlf", persona.Telefono);
+                if (persona.Apellidos == null)
+                {
+                    query.Parameters.AddWithValue("apellidos", DBNull.Value);
+                }
+                else
+                {
+                    query.Parameters.AddWithValue("apellidos", persona.Apellidos);
+                }
+                if (persona.Direccion == null)
+                {
+                    query.Parameters.AddWithValue("direccion", DBNull.Value);
+                }
+                else
+                {
+                    query.Parameters.AddWithValue("direccion", persona.Direccion);
+                }
+                if (persona.Telefono == null)
+                {
+                    query.Parameters.AddWithValue("tlf", DBNull.Value);
+                }
+                else
+                {
+                    query.Parameters.AddWithValue("tlf", persona.Telefono);
+                }
+                if (persona.FechaNacimiento == null)
+                {
+                    query.Parameters.AddWithValue("fechanacimiento", DBNull.Value);
+                }
+                else
+                {
+                    query.Parameters.AddWithValue("fechanacimiento", persona.FechaNacimiento);
+                }
+                
                 query.Parameters.AddWithValue("iddepartamento", persona.IdDepartamento);
 
                 query.Connection = sqlc;

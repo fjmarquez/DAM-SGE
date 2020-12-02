@@ -13,14 +13,32 @@ namespace _10CRUDPersonasBL.Listados
 
         public List<clsDepartamento> getListadoDepartamentos()
         {
-            List<clsDepartamento> list = new listadoDepartamentosDAL().getListadoDepartamentos();
+            List<clsDepartamento> list;
+
+            try
+            {
+                list = new listadoDepartamentosDAL().getListadoDepartamentos();
+            }catch(Exception e)
+            {
+                throw e;
+            }
+            
 
             return list;
         }
 
         public clsDepartamento getDepartamentoPorID(int ID)
         {
-            clsDepartamento departamento = new listadoDepartamentosDAL().getDepartamentoPorID(ID);
+            clsDepartamento departamento;
+
+            try
+            {
+                departamento = new listadoDepartamentosDAL().getDepartamentoPorID(ID);
+            }catch(Exception e)
+            {
+                throw e;
+            }
+            
 
             return departamento;
         }

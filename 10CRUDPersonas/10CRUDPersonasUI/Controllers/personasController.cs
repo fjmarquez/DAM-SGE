@@ -29,13 +29,20 @@ namespace _10CRUDPersonasUI.Controllers
         /// <returns></returns>
         public ActionResult listado()
         {
+            try
+            {
+                List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
 
-            List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
-
-            List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
- 
-
+                List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
+                
                 return View("listado", listConNombreDepartamento);
+            }
+            catch(Exception e)
+            {
+                return View("error");
+                throw e;
+            }
+                
         }
 
         /// <summary>
@@ -45,10 +52,26 @@ namespace _10CRUDPersonasUI.Controllers
         /// <returns></returns>
         public ActionResult Delete(int id)
         {
+            try
+            {
+                clsPersona pDelete = new listadoPersonasBL().getPersonaPorID(id);
 
-            clsPersona pDelete = new listadoPersonasBL().getPersonaPorID(id);
-
-            return View("delete", pDelete);
+                if(pDelete.Id != 0)
+                {
+                    return View("delete", pDelete);
+                }
+                else
+                {
+                    return View("error");
+                }
+                
+            }
+            catch(Exception e)
+            {
+                return View("error");
+                throw e;
+            }
+            
         }
 
 
@@ -61,13 +84,30 @@ namespace _10CRUDPersonasUI.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeletePost(int id)
         {
-            int fieldCount = new clsHandlerPersonaBL().deletePersonaBL(id);
 
-            List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
+            try
+            {
+                int fieldCount = new clsHandlerPersonaBL().deletePersonaBL(id);
 
-            List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
+                List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
 
-            return View("listado", listConNombreDepartamento);
+                List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
+
+                if(fieldCount == 1)
+                {
+                    return View("listado", listConNombreDepartamento);
+                }else
+                {
+                    return View("error");
+                }
+                
+            }
+            catch(Exception e)
+            {
+                return View("error");
+                throw e;
+            }
+            
         }
 
         /// <summary>
@@ -77,13 +117,29 @@ namespace _10CRUDPersonasUI.Controllers
         /// <returns></returns>
         public ActionResult Edit (int id)
         {
+            try
+            {
+                clsPersona pEdit = new listadoPersonasBL().getPersonaPorID(id);
+                List<clsDepartamento> listDepartamentos = new listadoDepartamentosBL().getListadoDepartamentos();
 
-            clsPersona pEdit = new listadoPersonasBL().getPersonaPorID(id);
-            List<clsDepartamento> listDepartamentos = new listadoDepartamentosBL().getListadoDepartamentos();
+                clsPersonaConListadoDepartamentos pListDepartamentos = new clsPersonaConListadoDepartamentos(pEdit, listDepartamentos);
 
-            clsPersonaConListadoDepartamentos pListDepartamentos = new clsPersonaConListadoDepartamentos(pEdit, listDepartamentos);
+                if(pEdit.Id != 0)
+                {
+                    return View("edit", pListDepartamentos);
+                }
+                else
+                {
+                    return View("error");
+                }
 
-            return View("edit", pListDepartamentos);
+            }
+            catch(Exception e)
+            {
+                return View("error");
+            }
+
+            
         }
 
         /// <summary>
@@ -99,56 +155,156 @@ namespace _10CRUDPersonasUI.Controllers
         /// <param name="iddepartamento"></param>
         /// <returns></returns>
         [HttpPost, ActionName("Edit")]
-        public ActionResult EditPost(int id, string nombre, string apellidos, DateTime fechanacimiento, string direccion, string telefono, int iddepartamento)
+        public ActionResult EditPost(clsPersonaConListadoDepartamentos pListDepartamentos)
         {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    List<clsDepartamento> listDepartamentos = new listadoDepartamentosBL().getListadoDepartamentos();
 
-            clsPersona pEdit = new clsPersona(id, nombre, apellidos, fechanacimiento, direccion, telefono, iddepartamento);
+                    pListDepartamentos.ListDepartamentos = listDepartamentos;
 
-            int fieldCount = new clsHandlerPersonaBL().updatePersonaBL(pEdit);
+                    return View(pListDepartamentos);
+                }
+                else
+                {
+                    clsPersona pCreate = new clsPersona();
 
-            List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
+                    pCreate.Id = pListDepartamentos.Id;
+                    pCreate.Nombre = pListDepartamentos.Nombre;
+                    pCreate.Apellidos = pListDepartamentos.Apellidos;
+                    pCreate.Direccion = pListDepartamentos.Direccion;
+                    pCreate.Telefono = pListDepartamentos.Telefono;
+                    pCreate.IdDepartamento = pListDepartamentos.IdDepartamento;
+                    pCreate.FechaNacimiento = pListDepartamentos.FechaNacimiento;
 
-            List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
+                    int fieldCount = new clsHandlerPersonaBL().updatePersonaBL(pCreate);
 
+                    List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
 
-            return View("listado", listConNombreDepartamento);
+                    List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
+
+                    if (fieldCount == 1)
+                    {
+                        return View("listado", listConNombreDepartamento);
+                    }
+                    else
+                    {
+                        return View("error");
+                    }
+                }
+            }
+            catch
+            {
+                return View("error");
+            }
         }
 
-
+        /// <summary>
+        /// Esta accion se realizara cuando el usuario desee crear un nuevo usuario, se mostrara una vista con un formulario vacio,
+        /// el cual tiene un submit que si los campos son rellenados correctamente creara una nueva persona y la insertara en la BD
+        /// mediante la capa BL
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
-            clsPersona pCreate = new clsPersona();
-            List<clsDepartamento> listDepartamentos = new listadoDepartamentosBL().getListadoDepartamentos();
+            try
+            {
+                clsPersona pCreate = new clsPersona();
+                List<clsDepartamento> listDepartamentos = new listadoDepartamentosBL().getListadoDepartamentos();
 
-            clsPersonaConListadoDepartamentos pListDepartamentos = new clsPersonaConListadoDepartamentos(pCreate, listDepartamentos);
+                clsPersonaConListadoDepartamentos pListDepartamentos = new clsPersonaConListadoDepartamentos(pCreate, listDepartamentos);
 
-            return View("create", pListDepartamentos);
+                return View("create", pListDepartamentos);
+            }
+            catch(Exception e)
+            {
+                return View("error");
+            }
+            
         }
 
-
+        /// <summary>
+        /// Esta accion comprueba que los campos hayan sido rellenado conforme a las dataAnnotations y si todo es correcto 
+        /// creara un objeto persona y lo persistira en la BD mediante la capa BL.
+        /// </summary>
+        /// <param name="pListDepartamentos"></param>
+        /// <returns></returns>
         [HttpPost, ActionName("Create")]
-        public ActionResult CreatePost(string nombre, string apellidos, DateTime fechanacimiento, string direccion, string telefono, int iddepartamento)
+        public ActionResult CreatePost(clsPersonaConListadoDepartamentos pListDepartamentos)
         {
 
-            clsPersona pCreate = new clsPersona(0, nombre, apellidos, fechanacimiento, direccion, telefono, iddepartamento);
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    List<clsDepartamento> listDepartamentos = new listadoDepartamentosBL().getListadoDepartamentos();
 
-            int fieldCount = new clsHandlerPersonaBL().createPersonaBL(pCreate);
+                    pListDepartamentos.ListDepartamentos = listDepartamentos;
 
-            List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
+                    return View(pListDepartamentos);
+                }
+                else
+                {
+                    clsPersona pCreate = new clsPersona();
 
-            List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
+                    pCreate.Nombre = pListDepartamentos.Nombre;
+                    pCreate.Apellidos = pListDepartamentos.Apellidos;
+                    pCreate.Direccion = pListDepartamentos.Direccion;
+                    pCreate.Telefono = pListDepartamentos.Telefono;
+                    pCreate.IdDepartamento = pListDepartamentos.IdDepartamento;
+                    pCreate.FechaNacimiento = pListDepartamentos.FechaNacimiento;
 
-            return View("listado", listConNombreDepartamento);
+                    int fieldCount = new clsHandlerPersonaBL().createPersonaBL(pCreate);
+
+                    List<clsPersona> list = new listadoPersonasBL().getListadoPersonas();
+
+                    List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new clsListadoPersonasConNombreDepartamento().getListadoPersonasConNombreDepartamento(list);
+
+                    if (fieldCount == 1)
+                    {
+                        return View("listado", listConNombreDepartamento);
+                    }
+                    else
+                    {
+                        return View("error");
+                    }
+                }
+            }catch(Exception e)
+            {
+                return View("error");
+            }
+  
         }
 
-
+        /// <summary>
+        /// Esta accion mostrara una vista con toda la informacion referente a la persona cuyo id hemos recibido.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Details(int id)
         {
-            clsPersona pDetails = new listadoPersonasBL().getPersonaPorID(id);
+            try
+            {
+                clsPersona pDetails = new listadoPersonasBL().getPersonaPorID(id);
 
-            clsPersonaConNombreDepartamento pConNombreDepartamento = new clsPersonaConNombreDepartamento().getPersonaConNombreDepartamento(pDetails);
+                clsPersonaConNombreDepartamento pConNombreDepartamento = new clsPersonaConNombreDepartamento().getPersonaConNombreDepartamento(pDetails);
 
-            return View("details", pConNombreDepartamento);
+                if(pConNombreDepartamento.Id != 0)
+                {
+                    return View("details", pConNombreDepartamento);
+                }else
+                {
+                    return View("error");
+                }
+                
+            }
+            catch(Exception e)
+            {
+                return View("error");
+            }
+            
         }
 
     }

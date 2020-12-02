@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace _10CRUDPersonasEntities
         private int idDepartamento;
 
 
-
+        [Display(Name ="Id")]
         public int Id
         {
             get
@@ -28,6 +29,7 @@ namespace _10CRUDPersonasEntities
             }
         }
 
+        [Display(Name = "Foto")]
         public byte[] Foto
         {
             get
@@ -40,6 +42,9 @@ namespace _10CRUDPersonasEntities
             }
         }
 
+        [Display(Name = "Nombre")]
+        [Required]
+        [MaxLength(50), MinLength(3)]
         public string Nombre
         {
             get
@@ -51,6 +56,10 @@ namespace _10CRUDPersonasEntities
                 nombre = value;
             }
         }
+
+        [Display(Name = "Apellidos")]
+        [MaxLength(80), MinLength(3)]
+
         public string Apellidos
         {
             get
@@ -62,6 +71,10 @@ namespace _10CRUDPersonasEntities
                 apellidos = value;
             }
         }
+
+        [Display(Name = "FechaNacimiento")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FechaNacimiento
         {
             get
@@ -74,6 +87,8 @@ namespace _10CRUDPersonasEntities
             }
         }
 
+        [Display(Name = "Direccion")]
+        [MaxLength(100), MinLength(3)]
         public string Direccion
         {
             get
@@ -86,6 +101,8 @@ namespace _10CRUDPersonasEntities
             }
         }
 
+        [Display(Name = "Telefono")]
+        [RegularExpression("^34(?:6[0-9]|7[1-9])[0-9]{7}$", ErrorMessage = "Telefono is required and must be properly formatted.")]
         public string Telefono
         {
             get
@@ -98,6 +115,7 @@ namespace _10CRUDPersonasEntities
             }
         }
 
+        [Required]
         public int IdDepartamento
         {
             get

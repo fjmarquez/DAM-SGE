@@ -18,7 +18,16 @@ namespace _10CRUDPersonasBL.Handlers
         /// <returns></returns>
         public int deletePersonaBL(int id)
         {
-            int fieldCount = new clsHandlerPersonaDAL().deletePersonaDAL(id);
+            int fieldCount = 0;
+
+            try
+            {
+                fieldCount = new clsHandlerPersonaDAL().deletePersonaDAL(id);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
 
             return fieldCount;
         }
@@ -31,7 +40,17 @@ namespace _10CRUDPersonasBL.Handlers
         /// <returns></returns>
         public int updatePersonaBL(clsPersona persona)
         {
-            int fieldCount = new clsHandlerPersonaDAL().updatePersonaDAL(persona);
+            int fieldCount = 0;
+
+            try
+            {
+                fieldCount = new clsHandlerPersonaDAL().updatePersonaDAL(persona);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            
 
             return fieldCount;
         }
@@ -44,7 +63,15 @@ namespace _10CRUDPersonasBL.Handlers
         /// <returns></returns>
         public int createPersonaBL(clsPersona persona)
         {
-            int fieldCount = new clsHandlerPersonaDAL().createPersonaDAL(persona);
+            int fieldCount = 0;
+
+            try
+            {
+                fieldCount = new clsHandlerPersonaDAL().createPersonaDAL(persona);
+            }catch(Exception e)
+            {
+                throw e;
+            }
 
             return fieldCount;
         }

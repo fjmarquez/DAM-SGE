@@ -12,27 +12,34 @@ namespace _10CRUDPersonasUI.Models
 
         public List<clsPersonaConNombreDepartamento> getListadoPersonasConNombreDepartamento (List<clsPersona> list)
         {
-
             List<clsPersonaConNombreDepartamento> listConNombreDepartamento = new List<clsPersonaConNombreDepartamento>();
 
-            foreach (clsPersona p in list)
+            try
             {
-                clsPersonaConNombreDepartamento pConNombreDepartamento = new clsPersonaConNombreDepartamento();
+                foreach (clsPersona p in list)
+                {
+                    clsPersonaConNombreDepartamento pConNombreDepartamento = new clsPersonaConNombreDepartamento();
 
-                pConNombreDepartamento.Id = p.Id;
-                pConNombreDepartamento.Nombre = p.Nombre;
-                pConNombreDepartamento.Apellidos = p.Apellidos;
-                pConNombreDepartamento.Direccion = p.Direccion;
-                pConNombreDepartamento.Telefono = p.Telefono;
-                pConNombreDepartamento.Foto = p.Foto;
-                pConNombreDepartamento.IdDepartamento = p.IdDepartamento;
-                clsDepartamento departamento = new listadoDepartamentosBL().getDepartamentoPorID(p.IdDepartamento);
-                pConNombreDepartamento.NombreDepartamento = departamento.Departamento;
+                    pConNombreDepartamento.Id = p.Id;
+                    pConNombreDepartamento.Nombre = p.Nombre;
+                    pConNombreDepartamento.Apellidos = p.Apellidos;
+                    pConNombreDepartamento.Direccion = p.Direccion;
+                    pConNombreDepartamento.Telefono = p.Telefono;
+                    pConNombreDepartamento.Foto = p.Foto;
+                    pConNombreDepartamento.IdDepartamento = p.IdDepartamento;
+                    clsDepartamento departamento = new listadoDepartamentosBL().getDepartamentoPorID(p.IdDepartamento);
+                    pConNombreDepartamento.NombreDepartamento = departamento.Departamento;
 
-                listConNombreDepartamento.Add(pConNombreDepartamento);
+                    listConNombreDepartamento.Add(pConNombreDepartamento);
 
 
+                }
+            }catch(Exception e)
+            {
+                throw e;
             }
+
+            
 
             return listConNombreDepartamento;
         }

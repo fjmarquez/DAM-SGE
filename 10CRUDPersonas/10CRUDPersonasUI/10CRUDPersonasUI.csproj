@@ -133,12 +133,12 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\personas\_listado.cshtml" />
     <Content Include="Views\personas\delete.cshtml" />
     <Content Include="Views\personas\listado.cshtml" />
-    <Content Include="Views\personas\edit.cshtml" />
-    <Content Include="Views\personas\create.cshtml" />
     <Content Include="Views\personas\details.cshtml" />
+    <Content Include="Views\personas\create.cshtml" />
+    <Content Include="Views\personas\edit.cshtml" />
+    <Content Include="Views\personas\error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
