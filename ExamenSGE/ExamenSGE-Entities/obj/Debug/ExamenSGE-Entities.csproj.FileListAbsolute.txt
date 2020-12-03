@@ -1,0 +1,6 @@
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-Entities\bin\Debug\ExamenSGE-Entities.dll
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-Entities\bin\Debug\ExamenSGE-Entities.pdb
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.csprojAssemblyReference.cache
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.csproj.CoreCompileInputs.cache
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.dll
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.pdb

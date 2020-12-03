@@ -1,0 +1,9 @@
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-DAL\bin\Debug\ExamenSGE-DAL.dll
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-DAL\bin\Debug\ExamenSGE-DAL.pdb
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-DAL\bin\Debug\ExamenSGE-Entities.dll
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-DAL\bin\Debug\ExamenSGE-Entities.pdb
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-DAL\obj\Debug\ExamenSGE-DAL.csprojAssemblyReference.cache
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-DAL\obj\Debug\ExamenSGE-DAL.csproj.CoreCompileInputs.cache
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-DAL\obj\Debug\ExamenSGE-DAL.csproj.CopyComplete
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-DAL\obj\Debug\ExamenSGE-DAL.dll
+D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-DAL\obj\Debug\ExamenSGE-DAL.pdb
