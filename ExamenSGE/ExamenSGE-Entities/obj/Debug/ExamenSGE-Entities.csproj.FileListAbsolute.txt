@@ -4,3 +4,9 @@ D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.
 D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.csproj.CoreCompileInputs.cache
 D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.dll
 D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.pdb
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-Entities\bin\Debug\ExamenSGE-Entities.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-Entities\bin\Debug\ExamenSGE-Entities.pdb
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.csprojAssemblyReference.cache
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.csproj.CoreCompileInputs.cache
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-Entities\obj\Debug\ExamenSGE-Entities.pdb
