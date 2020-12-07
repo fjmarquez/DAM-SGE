@@ -22,7 +22,7 @@ namespace ExamenSGE_DAL.ConnectionDAL
 
             this.server = "localhost";
             this.dataBase = "Mandalorian";
-            this.user = "prueba2";
+            this.user = "prueba";
             this.pass = "123";
 
         }
