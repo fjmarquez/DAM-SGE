@@ -9,3 +9,14 @@ D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-BL\obj\Debug\ExamenSGE-BL.csproj.CoreC
 D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-BL\obj\Debug\ExamenSGE-BL.csproj.CopyComplete
 D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-BL\obj\Debug\ExamenSGE-BL.dll
 D:\GitHub\SGE\DAM-SGE\ExamenSGE\ExamenSGE-BL\obj\Debug\ExamenSGE-BL.pdb
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-BL\bin\Debug\ExamenSGE-BL.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-BL\bin\Debug\ExamenSGE-BL.pdb
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-BL\bin\Debug\ExamenSGE-DAL.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-BL\bin\Debug\ExamenSGE-Entities.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-BL\bin\Debug\ExamenSGE-DAL.pdb
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-BL\bin\Debug\ExamenSGE-Entities.pdb
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-BL\obj\Debug\ExamenSGE-BL.csprojAssemblyReference.cache
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-BL\obj\Debug\ExamenSGE-BL.csproj.CoreCompileInputs.cache
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-BL\obj\Debug\ExamenSGE-BL.csproj.CopyComplete
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-BL\obj\Debug\ExamenSGE-BL.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\ExamenSGE\ExamenSGE-BL\obj\Debug\ExamenSGE-BL.pdb

@@ -20,7 +20,7 @@ namespace ExamenSGE_DAL.ConnectionDAL
         public clsConnection()
         {
 
-            this.server = "107-20";
+            this.server = "localhost";
             this.dataBase = "Mandalorian";
             this.user = "prueba";
             this.pass = "123";

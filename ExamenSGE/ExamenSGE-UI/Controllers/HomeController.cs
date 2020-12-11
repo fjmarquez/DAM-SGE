@@ -40,14 +40,14 @@ namespace ExamenSGE_UI.Controllers
         /// </summary>
         /// <param name="mision"></param>
         /// <returns></returns>
-        [HttpPost, ActionName("Index")]
-        public ActionResult IndexPost(int mision)
+        [HttpPost]
+        public ActionResult Index(int id)
         {
             clsMision misionSeleccionada;
 
             try
             {
-                misionSeleccionada = new clsListadoMisionesBL().getMision(mision);
+                misionSeleccionada = new clsListadoMisionesBL().getMision(id);
             }
             catch (SqlException e)
             {
@@ -62,18 +62,24 @@ namespace ExamenSGE_UI.Controllers
         /// </summary>
         /// <param name="mision"></param>
         /// <returns></returns>
-        public ActionResult updateMision(clsMision mision)
+        [HttpPost]
+        public ActionResult updateMision(int id, int creditos)
         {
+            int fieldCount;
+            List<clsMision> list;
+
             try
             {
-
-            }catch(SqlException e)
+                list = new clsListadoMisionesBL().getListadoMisionesPorCompletar();
+                //fieldCount = new clsHandlerMisionBL().updatePrecioMision(mision);
+            }
+            catch(SqlException e)
             {
                 throw e;
             }
-            int fieldCount = new clsHandlerMisionBL().updatePrecioMision(mision);
+            
 
-            return View("Index");
+            return View("Index", list);
         }
 
     }
