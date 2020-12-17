@@ -1,0 +1,11 @@
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Release\10CRUDPersonasBL.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Release\10CRUDPersonasBL.pdb
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Release\10CRUDPersonasDAL.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Release\10CRUDPersonasEntities.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Release\10CRUDPersonasDAL.pdb
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\bin\Release\10CRUDPersonasEntities.pdb
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Release\10CRUDPersonasBL.csprojAssemblyReference.cache
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Release\10CRUDPersonasBL.csproj.CoreCompileInputs.cache
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Release\10CRUDPersonasBL.csproj.CopyComplete
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Release\10CRUDPersonasBL.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasBL\obj\Release\10CRUDPersonasBL.pdb

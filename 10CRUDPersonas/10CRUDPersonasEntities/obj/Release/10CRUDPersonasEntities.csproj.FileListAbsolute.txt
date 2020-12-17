@@ -1,0 +1,6 @@
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasEntities\bin\Release\10CRUDPersonasEntities.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasEntities\bin\Release\10CRUDPersonasEntities.pdb
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasEntities\obj\Release\10CRUDPersonasEntities.csprojAssemblyReference.cache
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasEntities\obj\Release\10CRUDPersonasEntities.csproj.CoreCompileInputs.cache
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasEntities\obj\Release\10CRUDPersonasEntities.dll
+C:\Users\Francisco J. Márquez\GitHub\SGE\10CRUDPersonas\10CRUDPersonasEntities\obj\Release\10CRUDPersonasEntities.pdb

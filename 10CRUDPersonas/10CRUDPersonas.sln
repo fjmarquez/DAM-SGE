@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10CRUDPersonasBL", "10CRUDP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10CRUDPersonasEntities", "10CRUDPersonasEntities\10CRUDPersonasEntities.csproj", "{89A33200-199E-4CE2-9F61-9452A233A93E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10CRUDPersonasAPI", "10CRUDPersonasAPI\10CRUDPersonasAPI.csproj", "{296567B2-7533-401E-B528-5E63606D7D18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{89A33200-199E-4CE2-9F61-9452A233A93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89A33200-199E-4CE2-9F61-9452A233A93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89A33200-199E-4CE2-9F61-9452A233A93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{296567B2-7533-401E-B528-5E63606D7D18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296567B2-7533-401E-B528-5E63606D7D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296567B2-7533-401E-B528-5E63606D7D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296567B2-7533-401E-B528-5E63606D7D18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
