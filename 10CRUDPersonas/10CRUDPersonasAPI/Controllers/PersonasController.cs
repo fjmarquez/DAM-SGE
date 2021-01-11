@@ -14,13 +14,17 @@ namespace _10CRUDPersonasAPI.Controllers
         // GET: api/Personas
         public IEnumerable<clsPersona> Get()
         {
-            return new listadoPersonasBL().getListadoPersonas();
+            listadoPersonasBL handler = new listadoPersonasBL();
+
+            return handler.getListadoPersonas();
         }
 
         // GET: api/Personas/5
-        public string Get(int id)
+        public clsPersona Get(int id)
         {
-            return "value";
+            listadoPersonasBL handler = new listadoPersonasBL();
+
+            return handler.getPersonaPorID(id);
         }
 
         // POST: api/Personas
