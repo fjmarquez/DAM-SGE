@@ -13,13 +13,15 @@
 </head>
 <body>
     <div class="container">
-        <input type="text" id="message" />
+        <input type="text" id="message" value="hola2" />
         <input type="button" id="sendmessage" value="Send" />
         <input type="hidden" id="displayname" />
         <ul id="discussion">
         </ul>
     </div>
     <!--Script references. -->
+    <!-- ChatMessage Class -->
+    <script src="Scripts/ChatMessage.js"></script>
     <!--Reference the jQuery library. -->
     <script src="Scripts/jquery-3.4.1.min.js"></script>
     <!--Reference the SignalR library. -->
@@ -32,10 +34,12 @@
             // Declare a proxy to reference the hub.
             var chat = $.connection.chatHub;
             // Create a function that the hub can call to broadcast messages.
-            chat.client.broadcastMessage = function (name, message) {
+            chat.client.broadcastMessage = function (chatMessage) {
                 // Html encode display name and message.
-                var encodedName = $('<div />').text(name).html();
-                var encodedMsg = $('<div />').text(message).html();
+                //console.log(chatMessage['Username']);
+                var encodedName = $('<div />').text(chatMessage['Username']).html();
+                //console.log(encodedName);
+                var encodedMsg = $('<div />').text(chatMessage['Message']).html();
                 // Add the message to the page.
                 $('#discussion').append('<li><strong>' + encodedName
                     + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
@@ -47,8 +51,12 @@
             // Start the connection.
             $.connection.hub.start().done(function () {
                 $('#sendmessage').click(function () {
+                    var chatMessage = new ChatMessage($('#displayname').val(), $('#message').val());
+                    //console.log($('#displayname').val());
+                    //console.log($('#message').val());
+                    //console.log(chatMessage);
                     // Call the Send method on the hub.
-                    chat.server.send($('#displayname').val(), $('#message').val());
+                    chat.server.send(chatMessage);
                     // Clear text box and reset focus for next comment.
                     $('#message').val('').focus();
                 });
