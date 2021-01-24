@@ -21,7 +21,7 @@ namespace _10CRUDPersonasAPI.Controllers
             try
             {
                 lista = handler.getListadoPersonas();
-                
+                return lista;
             }
             catch
             {
@@ -38,7 +38,7 @@ namespace _10CRUDPersonasAPI.Controllers
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
 
-            return lista;
+            
         }
 
         // GET: api/Personas/5
@@ -50,7 +50,7 @@ namespace _10CRUDPersonasAPI.Controllers
             try
             {
                 p = handler.getPersonaPorID(id);
-                
+                return p;
             }
             catch
             {
@@ -66,7 +66,7 @@ namespace _10CRUDPersonasAPI.Controllers
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
 
-            return p;
+            
         }
 
         // POST: api/Personas
