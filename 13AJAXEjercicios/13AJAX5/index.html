@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CRUD AJAX</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    <script src="scripts/departamento.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="scripts/departamento.js"></script>
+    <script src="scripts/persona.js"></script>
+    <script src="scripts/script.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">CRUD AJAX</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Personas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Departamentos</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            Sistemas de Gestion Empresarial
+          </span>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+          <div class="row">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Fecha Nacimiento</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Departamento</th>
+                    <th scope="col">Opciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tablaPersonas">
+                  <tr>
+                    <td scope="row">1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>03/02/2000</td>
+                    <td>C/Prueba</td>
+                    <td>666555444</td>
+                    <td>Marketing</td>
+                    <td>
+                        <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                        <button type="button" class="btn btn-secondary"><i class="fas fa-user-edit"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+      </div>
+
+
+</body>
+</html>
