@@ -72,7 +72,15 @@ function rellenarTabla(listaPersonas){
     
     for(var i = 0; i < listaPersonas.length; i++){
         var nuevaFila = document.createElement("tr");
+/*
+        for(var x = 0; x < 7; x++){
 
+            for( x in listaPersonas[i]){
+
+            }
+            
+        }
+*/
         //id
         var celdaId = document.createElement("td");
         celdaId.innerHTML = listaPersonas[i].id;
