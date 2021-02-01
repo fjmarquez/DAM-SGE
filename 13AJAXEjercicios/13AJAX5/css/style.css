@@ -1,5 +1,23 @@
 /* NAVBAR */
 
 .navbar{
-    background-color: #ffed4a !important;
+    background-color: #fffd83 !important;
+}
+
+/* TABLA */
+
+#btnEditar{
+    background-color: #949494 !important ;
+    border-color: transparent !important;
+}
+
+#btnEliminar{
+    background-color: #db5856  !important ;
+    border-color: transparent !important;
+    margin-left: 2%;
+}
+
+#loader {
+    margin-top: 2% !important;
+    margin-bottom: 2% !important;
 }

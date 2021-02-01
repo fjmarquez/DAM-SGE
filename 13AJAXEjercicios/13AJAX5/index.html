@@ -6,10 +6,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    <script src="scripts/departamento.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="scripts/departamento.js"></script>
     <script src="scripts/persona.js"></script>
+    <script src="scripts/datosAPI.js"></script>
+    <script src="scripts/utilesTabla.js"></script>
     <script src="scripts/script.js"></script>
 </head>
 <body>
@@ -21,11 +26,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Personas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Departamentos</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Personas
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <button type="button" class="btn col-lg-12 col-md-12" id="btnNuevo">Nuevo</button>
+              </div>
             </li>
           </ul>
           <span class="navbar-text">
@@ -35,37 +42,138 @@
       </nav>
 
       <div class="container-fluid">
+        <div class="d-flex justify-content-center" >
+          <div class="spinner-border text-warning" id="loader" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        
+
           <div class="row">
-            <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellidos</th>
-                    <th scope="col">Fecha Nacimiento</th>
-                    <th scope="col">Direccion</th>
-                    <th scope="col">Telefono</th>
-                    <th scope="col">Departamento</th>
-                    <th scope="col">Opciones</th>
-                  </tr>
+            <table id="tPersonas" class="table table-striped">
+                <thead id="tHeadPersonas">
+                  
                 </thead>
-                <tbody id="tablaPersonas">
-                  <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>03/02/2000</td>
-                    <td>C/Prueba</td>
-                    <td>666555444</td>
-                    <td>Marketing</td>
-                    <td>
-                        <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                        <button type="button" class="btn btn-secondary"><i class="fas fa-user-edit"></i></button>
-                    </td>
-                  </tr>
+                <tbody id="tBodyPersonas">
+                  
                 </tbody>
               </table>
           </div>
+
+          <div class="row">
+            <table id="table" class="table table-striped" style="width:100%!important;">
+                <thead id="tHead">
+                  
+                </thead>
+                <tbody id="tBody">
+                  
+                </tbody>
+              </table>
+          </div>
+      </div>
+
+      <!-- MODAL ELIMINAR -->
+      <div class="modal" id="modalEliminar" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Eliminar</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="modal-body-eliminar">
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btn-modal-eliminar" class="btn btn-primary">Eliminar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL EDITAR -->
+      <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="modalNombreEditar" class="col-form-label">Nombre:</label>
+                  <input type="text" class="form-control" id="modalNombreEditar">
+                </div>
+                <div class="form-group">
+                  <label for="modalApellidosEditar" class="col-form-label">Apellidos:</label>
+                  <input class="form-control" id="modalApellidosEditar">
+                </div>
+                <div class="form-group">
+                  <label for="modalFNacimientoEditar" class="col-form-label">Fecha de nacimiento:</label>
+                  <input class="form-control" id="modalFNacimientoEditar">
+                </div>
+                <div class="form-group">
+                  <label for="modalDireccionEditar" class="col-form-label">Direccion:</label>
+                  <input type="text" class="form-control" id="modalDireccionEditar">
+                </div>
+                <div class="form-group">
+                  <label for="modalTelefonoEditar" class="col-form-label">Telfono:</label>
+                  <input class="form-control" id="modalTelefonoEditar">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="btn-modal-editar">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL NUEVO -->
+      <div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Nuevo</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="modalNombreNuevo" class="col-form-label">Nombre:</label>
+                  <input type="text" class="form-control" id="modalNombreNuevo">
+                </div>
+                <div class="form-group">
+                  <label for="modalApellidosNuevo" class="col-form-label">Apellidos:</label>
+                  <input class="form-control" id="modalApellidosNuevo">
+                </div>
+                <div class="form-group">
+                  <label for="modalFNacimientoNuevo" class="col-form-label">Fecha de nacimiento:</label>
+                  <input class="form-control" id="modalFNacimientoNuevo">
+                </div>
+                <div class="form-group">
+                  <label for="modalDireccionNuevo" class="col-form-label">Direccion:</label>
+                  <input type="text" class="form-control" id="modalDireccionNuevo">
+                </div>
+                <div class="form-group">
+                  <label for="modalTelefonoNuevo" class="col-form-label">Telfono:</label>
+                  <input class="form-control" id="modalTelefonoNuevo">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="btn-modal-nuevo">Añadir</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
       </div>
 
 
