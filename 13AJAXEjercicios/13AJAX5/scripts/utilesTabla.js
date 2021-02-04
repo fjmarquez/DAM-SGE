@@ -3,7 +3,7 @@
  * 
  * @param {*} listaPersonas 
  */
-function rellenarTabla(listaPersonas){
+function rellenarTabla(){
 
     //Identificamos los componentes de la tabla
 
@@ -14,7 +14,7 @@ function rellenarTabla(listaPersonas){
     var tBody = document.getElementById("tBodyPersonas");
 
     //Obtenemos los nombre de las propiedades de la clase persona y creamos el head de la tabla dinamicamente
-    var nombrePropiedades = Object.keys(listaPersonas[0]);
+    var nombrePropiedades = Object.keys(listaPersonasAPI[0]);
 
     var filaHead = document.createElement("tr");
 
@@ -35,16 +35,20 @@ function rellenarTabla(listaPersonas){
 
     tHead.appendChild(filaHead); //Añade la cabecera a la tabla
 
-    for(var i = 0; i < listaPersonas.length; i++){
+    for(var i = 0; i < listaPersonasAPI.length; i++){
 
         var nuevaFila = document.createElement("tr");
 
         // Obtenemos los nombre de las propiedades de la clase persona y creamos las celdas correspondiente para cada fila del body
-        for( x in listaPersonas[i]){ 
+        for( x in listaPersonasAPI[i]){ 
+
+            if(x == "fechaNacimiento"){
+                listaPersonasAPI[i][x] = listaPersonasAPI[i][x].split('T')[0];
+            }
 
             var nuevaCelda = document.createElement("td");
 
-            nuevaCelda.innerHTML = listaPersonas[i][x];
+            nuevaCelda.innerHTML = listaPersonasAPI[i][x];
 
             nuevaFila.appendChild(nuevaCelda);//Añada cada celda a la fila
 
@@ -81,11 +85,16 @@ function crearBotones(nuevaFila){
 
         //console.log(persona);
 
+        document.getElementById("modalIDEditar").value = persona['id'];
+
         document.getElementById("modalNombreEditar").value = persona['nombre'];
 
         document.getElementById("modalApellidosEditar").value = persona['apellidos'];
 
-        document.getElementById("modalFNacimientoEditar").value = persona['fechaNacimiento'];
+        //document.getElementById("modalFNacimientoEditar").value = persona['fechaNacimiento'];
+
+        $('#modalFNacimientoEditar').datepicker('setDate', new Date(persona['fechaNacimiento']));
+
 
         document.getElementById("modalDireccionEditar").value = persona['direccion'];
 
@@ -109,14 +118,12 @@ function crearBotones(nuevaFila){
     btnEliminar.onclick = function (e) {
 
         fila = $(this).closest("tr");
-
         var persona = obtenerPersonaFila(fila);
 
-        console.log(persona);
-
-        var bodyModalEliminar = document.getElementById("modal-body-eliminar");
-
+        var bodyModalEliminar = document.getElementById("modal-body-confirmacion-eliminar");
         bodyModalEliminar.innerHTML = "¿Desea eliminar a " + persona['nombre'] + "?";
+
+        document.getElementById("modalIDEliminar").value = persona['id'];
 
         $('#modalEliminar').modal('show');
 
@@ -125,6 +132,9 @@ function crearBotones(nuevaFila){
     //Identificamos btnNuevo y le proporcionamos una funcion
     var btnNuevo = document.getElementById("btnNuevo");
         btnNuevo.onclick = function(e){
+
+            $('#modalFNacimientoNuevo').datepicker('setDate', new Date());
+
             $('#modalNuevo').modal('show');
         }
 
@@ -193,6 +203,8 @@ function obtenerPersonaFila(fila){
             }
         }
     }
+
+    console.log(personaFila);
     
     return personaFila;    
 }

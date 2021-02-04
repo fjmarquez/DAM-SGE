@@ -1,13 +1,12 @@
+var listaPersonasAPI;
+
 window.onload =  function(){
 
-    obtenerPersonas().then((listaPersonas) =>{
-
-        
-        
-        
+    obtenerPersonas().then((listaPersonasPromise) =>{
+        listaPersonasAPI = listaPersonasPromise;
         var loader = document.getElementById("loader");
         loader.style.display = "none";
-        rellenarTabla(listaPersonas);
+        rellenarTabla();
         botonesModales();
     });
 
