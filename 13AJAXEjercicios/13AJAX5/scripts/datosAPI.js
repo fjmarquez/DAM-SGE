@@ -12,7 +12,7 @@ function obtenerPersonas(){
                 var listaPersonas = jsonAPersona(response);
                 resolve(listaPersonas);
             },
-            error: function(jqXHR, departamentoFila, error){
+            error: function(jqXHR, error){
                 reject("Error en la peticion");
             }
         });
@@ -27,6 +27,21 @@ function obtenerPersonas(){
  */
 function eliminarPersona(id){
 
+    return new Promise((resolve, reject) => {
+
+        $.ajax({
+            url: "https://fjmarquezcrudnet.azurewebsites.net/api/personas/"+id, 
+            method: "DELETE",
+            success: function(response){
+                resolve(response);
+            },
+            error: function(jqXHR, error){
+                reject("Error en la peticion");
+            }
+        });
+
+    });
+
 }
 
 /**
@@ -36,6 +51,81 @@ function eliminarPersona(id){
  */
 function editarPersona(persona){
 
+    
+    return new Promise((resolve, reject) => {
+        var personaJSON = JSON.stringify(persona);
+        console.log(personaJSON); 
+        $.ajax({
+            url: "https://fjmarquezcrudnet.azurewebsites.net/api/personas", 
+            method: "PUT",
+            data: personaJSON,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function(){
+                resolve("OK");
+            },
+            error: function(jqXHR, error){
+                reject("Fallo en la peticion");
+            }
+        });
+
+    }).catch(e => {
+        console.log(e);
+    });
+
+}
+
+/**
+ * Con esta funcion creamos los registros correspondientes a una nueva persona en la BD mediante la API, recibiremos un objeto persona con 
+ * los nuevos
+ * @param {*} persona 
+ */
+function nuevaPersona(persona){
+
+    var personaJSON = JSON.stringify(persona);
+    console.log(personaJSON); 
+    return new Promise((resolve, reject) => {
+        
+        $.ajax({
+            url: "https://fjmarquezcrudnet.azurewebsites.net/api/personas", 
+            method: "POST",
+            data: personaJSON,
+            dataType: "json",
+            contentType: "application/json",
+            success: function(response){
+                resolve(response);
+            },
+            error: function(jqXHR, error){
+                reject("Error en la peticion");
+            }
+        });
+
+    }).catch(e => {
+        console.log(e);
+    });
+
+}
+
+/**
+ * Con esta funcion obtenemos un JSON con todos los depatamentos pero finalmente devolveremos un array de departamentos
+ */
+function obtenerDepartamentos(){
+    return new Promise((resolve, reject) => {
+
+        $.ajax({
+            url: "https://fjmarquezcrudnet.azurewebsites.net/api/departamentos", 
+            method: "GET",
+            success: function(response){
+                //console.log(response);
+                var listaDepartamentos = jsonADepartamento(response);
+                resolve(listaDepartamentos);
+            },
+            error: function(jqXHR, error){
+                reject("Error en la peticion");
+            }
+        });
+
+    });
 }
 
 /**
@@ -44,18 +134,22 @@ function editarPersona(persona){
  * @param {*} listaJSON 
  */
 function jsonAPersona(listaJSON){
-    //alert(listaJSON);
 
     listaPersonas = [];
 
     for(var i = 0; i < listaJSON.length; i++){
+
+        //Objeto departamento correspondiente a cada persona
+        var departamentoP = listaDepartamentosAPI.find(departamento => departamento.id === listaJSON[i]["IdDepartamento"]);
+        //console.log(departamentoP);
+
         var p = new persona(  listaJSON[i]["Id"],
                               listaJSON[i]["Nombre"], 
                               listaJSON[i]["Apellidos"],
                               listaJSON[i]["FechaNacimiento"],
                               listaJSON[i]["Direccion"],
                               listaJSON[i]["Telefono"],
-                              listaJSON[i]["IdDepartamento"]);
+                              departamentoP);
         
         listaPersonas.push(p);
 
@@ -63,5 +157,26 @@ function jsonAPersona(listaJSON){
 
     //console.log(listaPersonas);
     return listaPersonas;
+}
+
+/**
+ * Esta funcion parseara el JSON obtenido a un array de departamentos
+ * 
+ * @param {*} listaJSON 
+ */
+function jsonADepartamento(listaJSON){
+
+    listaDepartamentos = [];
+
+    for(var i = 0; i < listaJSON.length; i++){
+        var d = new departamento(  listaJSON[i]["Id"],
+                              listaJSON[i]["Departamento"]);
+        
+        listaDepartamentos.push(d);
+
+    }
+
+    //console.log(listaDepartamentos);
+    return listaDepartamentos;
 }
 

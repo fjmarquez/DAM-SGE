@@ -1,14 +1,21 @@
 var listaPersonasAPI;
+var listaDepartamentosAPI;
 
 window.onload =  function(){
 
-    obtenerPersonas().then((listaPersonasPromise) =>{
-        listaPersonasAPI = listaPersonasPromise;
-        var loader = document.getElementById("loader");
-        loader.style.display = "none";
-        rellenarTabla();
-        botonesModales();
+    obtenerDepartamentos().then((listaDepartamentosPromise)=>{
+        listaDepartamentosAPI = listaDepartamentosPromise;
+        obtenerPersonas().then((listaPersonasPromise) =>{
+            listaPersonasAPI = listaPersonasPromise;
+            var loader = document.getElementById("loader");
+            loader.style.display = "none";
+            rellenarTabla(listaPersonasAPI);
+            botonesModales();
+            buscadorNombre();
+        });
+        //console.log(listaDepartamentosPromise);
     });
+    
 
 
     /*obtenerPersonas().then((listaPersonas) =>{
