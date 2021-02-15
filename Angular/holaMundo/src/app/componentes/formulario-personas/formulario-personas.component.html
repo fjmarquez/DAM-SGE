@@ -1,0 +1,11 @@
+<form>
+    <div>
+        <input type="text" #nombre placeholder="Introduce tu nombre" required>
+    </div>
+    <div>
+        <input type="text" #apellidos placeholder="Introduce tu apellido" required>
+    </div>
+    <div>
+        <input type="button" id="btnPersona" value="Enviar" (click)="saludar(nombre.value, apellidos.value)">
+    </div>
+</form>
