@@ -1,4 +1,4 @@
-<form>
+<!--<form>
     <div>
         <input type="text" #nombre placeholder="Introduce tu nombre" required>
     </div>
@@ -8,6 +8,58 @@
     <div>
         <input type="button" id="btnPersona" value="Enviar" (click)="saludar(nombre.value, apellidos.value)">
     </div>
-</form>
+</form>-->
 
+
+<form [formGroup]="formulario">
+
+    <div>
+        
+        <span>Nombre: </span>
+        <input type="text" id="nombre" formControlName="nombre">
+
+    </div>
+
+    <div>
+        
+        <span>Apellidos: </span>
+        <input type="text" id="apellidos" formControlName="apellidos">
+
+    </div>
+
+    <div>
+        
+        <span>Direccion: </span>
+        <input type="text" id="direccion" formControlName="direccion">
+
+    </div>
+
+    <div>
+        
+        <span>Fecha de nacimiento: </span>
+        <input type="date" id="fechaNacimiento" formControlName="fechaNacimiento">
+
+    </div>
+
+    <div>
+        
+        <span>Telefono: </span>
+        <input type="text" id="telefono" formControlName="telefono">
+
+    </div>
+
+    <div>
+        
+        <span>Departamento: </span>
+        <input type="text" id="departamento" formControlName="departamento">
+
+    </div>
+
+    <div>
+
+        <button type="button" (click)="saludar()">Saludar</button>
+
+    </div>
+
+</form>
 

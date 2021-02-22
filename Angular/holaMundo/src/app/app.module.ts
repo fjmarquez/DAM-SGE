@@ -7,6 +7,7 @@ import { TablaPersonasComponent } from './componentes/tabla-personas/tabla-perso
 import { ListaPersonasComponent } from './componentes/lista-personas/lista-personas.component';
 import { FormularioPersonasComponent } from './componentes/formulario-personas/formulario-personas.component';
 import { MenuComponent } from './componentes/menu/menu.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MenuComponent } from './componentes/menu/menu.component';
     ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
