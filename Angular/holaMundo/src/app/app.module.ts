@@ -8,6 +8,14 @@ import { ListaPersonasComponent } from './componentes/lista-personas/lista-perso
 import { FormularioPersonasComponent } from './componentes/formulario-personas/formulario-personas.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +28,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    MatSliderModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

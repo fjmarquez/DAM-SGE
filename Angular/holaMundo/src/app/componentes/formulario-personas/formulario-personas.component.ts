@@ -30,15 +30,15 @@ export class FormularioPersonasComponent implements OnInit {
       
       apellidos:new FormControl('',[Validators.required]),
 
-      direccion:new FormControl('calle',[]),
+      direccion:new FormControl('calle',[Validators.min(5)]),
 
-      fechaNacimiento: new FormControl('10-10-2021',[]),
+      fechaNacimiento: new FormControl('',[/*Validators.pattern('/^((0[13578]|1[02])[\/.]31[\/.](18|19|20)[0-9]{2})|((01|0[3-9]|1[1-2])[\/.](29|30)[\/.](18|19|20)[0-9]{2})|((0[1-9]|1[0-2])[\/.](0[1-9]|1[0-9]|2[0-8])[\/.](18|19|20)[0-9]{2})|((02)[\/.]29[\/.](((18|19|20)(04|08|[2468][048]|[13579][26]))|2000))$/')*/]),
 
-      telefono: new FormControl('',[]),
+      telefono: new FormControl('',[Validators.pattern('^34(?:6[0-9]|7[1-9])[0-9]{7}$')]),
 
-      departamento: new FormControl()
-      
-      }
+      departamento: new FormControl('', [Validators.required])
+    
+    }
       
       );
 
