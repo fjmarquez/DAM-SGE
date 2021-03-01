@@ -9,10 +9,13 @@ import { FormularioPersonasComponent } from './componentes/formulario-personas/f
 import { MenuComponent } from './componentes/menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatCardModule } from '@angular/material/card'; 
+import { MatInputModule } from '@angular/material/input';
+import { FormularioReactivoComponent } from './componentes/formulario-reactivo/formulario-reactivo.component';
 
 
 
@@ -23,7 +26,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     TablaPersonasComponent,
     ListaPersonasComponent,
     FormularioPersonasComponent,
-    MenuComponent
+    MenuComponent,
+    FormularioReactivoComponent
     ],
   imports: [
     BrowserModule,
@@ -32,7 +36,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatSliderModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
