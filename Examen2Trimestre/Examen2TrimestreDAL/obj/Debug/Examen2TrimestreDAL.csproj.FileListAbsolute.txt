@@ -1,0 +1,9 @@
+D:\GitHub\SGE\DAM-SGE\Examen2Trimestre\Examen2TrimestreDAL\obj\Debug\Examen2TrimestreDAL.csprojAssemblyReference.cache
+D:\GitHub\SGE\DAM-SGE\Examen2Trimestre\Examen2TrimestreDAL\obj\Debug\Examen2TrimestreDAL.csproj.CoreCompileInputs.cache
+D:\GitHub\SGE\DAM-SGE\Examen2Trimestre\Examen2TrimestreDAL\bin\Debug\Examen2TrimestreDAL.dll
+D:\GitHub\SGE\DAM-SGE\Examen2Trimestre\Examen2TrimestreDAL\bin\Debug\Examen2TrimestreDAL.pdb
+D:\GitHub\SGE\DAM-SGE\Examen2Trimestre\Examen2TrimestreDAL\bin\Debug\Examen2TrimestreEntities.dll
+D:\GitHub\SGE\DAM-SGE\Examen2Trimestre\Examen2TrimestreDAL\bin\Debug\Examen2TrimestreEntities.pdb
+D:\GitHub\SGE\DAM-SGE\Examen2Trimestre\Examen2TrimestreDAL\obj\Debug\Examen2TrimestreDAL.csproj.CopyComplete
+D:\GitHub\SGE\DAM-SGE\Examen2Trimestre\Examen2TrimestreDAL\obj\Debug\Examen2TrimestreDAL.dll
+D:\GitHub\SGE\DAM-SGE\Examen2Trimestre\Examen2TrimestreDAL\obj\Debug\Examen2TrimestreDAL.pdb

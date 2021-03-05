@@ -118,6 +118,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Pages\index.html" />
+    <Content Include="Pages\Mision.js" />
     <Content Include="Pages\script.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -139,7 +140,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\PruebaController.cs" />
+    <Compile Include="Controllers\MisionesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,7 +173,18 @@
     <Folder Include="App_Data\" />
     <Folder Include="Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Mandaloriano\" />
     <Folder Include="Views\Prueba\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Examen2TrimestreBL\Examen2TrimestreBL.csproj">
+      <Project>{c5440c5c-7a09-4580-891c-f55304aa70df}</Project>
+      <Name>Examen2TrimestreBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Examen2TrimestreEntities\Examen2TrimestreEntities.csproj">
+      <Project>{23d82f85-d503-45b3-bcd2-4c809dcaf717}</Project>
+      <Name>Examen2TrimestreEntities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
