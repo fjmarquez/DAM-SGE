@@ -16,7 +16,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card'; 
 import { MatInputModule } from '@angular/material/input';
 import { FormularioReactivoComponent } from './componentes/formulario-reactivo/formulario-reactivo.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { TablaAPIComponent } from './componentes/tabla-api/tabla-api.component';
 
 
 
@@ -27,7 +28,8 @@ import { FormularioReactivoComponent } from './componentes/formulario-reactivo/f
     ListaPersonasComponent,
     FormularioPersonasComponent,
     MenuComponent,
-    FormularioReactivoComponent
+    FormularioReactivoComponent,
+    TablaAPIComponent
     ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { FormularioReactivoComponent } from './componentes/formulario-reactivo/f
     MatSlideToggleModule,
     MatFormFieldModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

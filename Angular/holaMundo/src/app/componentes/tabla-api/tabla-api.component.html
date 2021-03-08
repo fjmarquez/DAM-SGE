@@ -1,0 +1,21 @@
+<h1>Tabla personas - API</h1>
+
+
+<table style="border: 1px solid black;">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Direccion</th>
+            <th>Fecha Nacimiento</th>
+            <th>Telefono</th>
+            <th>ID Departamento</th>
+        </tr>
+        <tr *ngFor="let item of listadoPersonas">
+            <td>{{ item.Nombre }}</td>
+            <td>{{ item.Apellidos }}</td>
+            <td>{{ item.Direccion }}</td>
+            <td>{{ item.FechaNacimiento }}</td>
+            <td>{{ item.Telefono }}</td>
+            <td>{{ item.IdDepartamento }}</td>
+        </tr>
+</table>
